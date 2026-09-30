@@ -1,0 +1,2521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Compensação de Ausência e Nota — História e Geografia
+</title>
+
+<style>
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root{
+
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --text:#172033;
+  --muted:#657089;
+  --primary:#339754;
+  --primary2:#0b5708;
+  --border:#dfe5ef;
+  --ok:#0c613b;
+  --warning:#9a6700;
+  --danger:#a51d2d;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+  margin:0;
+
+  background:var(--bg);
+
+  color:var(--text);
+
+  font-family:
+    Inter,
+    Segoe UI,
+    Arial,
+    sans-serif;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container{
+
+  max-width:900px;
+
+  margin:0 auto;
+
+  padding:28px 16px 60px;
+
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.header{
+
+  background:
+    linear-gradient(
+      135deg,
+      #326e0b,
+      #207e11
+    );
+
+  color:white;
+
+  border-radius:20px;
+
+  padding:28px;
+
+  margin-bottom:18px;
+
+  box-shadow:
+    0 10px 30px #173d9b22;
+
+}
+
+
+.logo-area{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+}
+
+
+.logos{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  flex-shrink:0;
+
+}
+
+
+.logo{
+
+  width:78px;
+
+  height:78px;
+
+  object-fit:contain;
+
+  background:white;
+
+  border-radius:14px;
+
+  padding:7px;
+
+  box-shadow:
+    0 5px 15px #00000020;
+
+}
+
+
+.logo-pedro{
+
+  width:78px;
+
+  height:78px;
+
+  object-fit:contain;
+
+  background:white;
+
+  border-radius:50%;
+
+  padding:7px;
+
+  box-shadow:
+    0 5px 15px #00000020;
+
+}
+
+
+.header-content{
+
+  flex:1;
+
+}
+
+
+.header h1{
+
+  margin:0 0 8px;
+
+  font-size:28px;
+
+  line-height:1.2;
+
+}
+
+
+.header p{
+
+  margin:0;
+
+  line-height:1.55;
+
+  opacity:.94;
+
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card{
+
+  background:var(--card);
+
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:24px;
+
+  margin:16px 0;
+
+  box-shadow:
+    0 5px 18px #18243b0b;
+
+}
+
+
+h2{
+
+  font-size:19px;
+
+  margin:0 0 18px;
+
+}
+
+
+h3{
+
+  margin-top:0;
+
+  color:var(--primary2);
+
+}
+
+
+/* =====================================================
+   CAMPOS
+===================================================== */
+
+.label{
+
+  display:block;
+
+  font-weight:700;
+
+  margin:15px 0 8px;
+
+}
+
+
+input[type=text],
+select,
+textarea{
+
+  width:100%;
+
+  border:
+    1px solid #ccd5e4;
+
+  border-radius:10px;
+
+  padding:12px;
+
+  font:inherit;
+
+  background:white;
+
+}
+
+
+input[type=text]:focus,
+select:focus,
+textarea:focus{
+
+  outline:none;
+
+  border-color:var(--primary);
+
+  box-shadow:
+    0 0 0 3px #33975420;
+
+}
+
+
+textarea{
+
+  min-height:180px;
+
+  resize:vertical;
+
+  line-height:1.6;
+
+}
+
+
+/* =====================================================
+   ATIVIDADE
+===================================================== */
+
+.activity{
+
+  background:#f7f9fd;
+
+  border:1px solid var(--border);
+
+  border-radius:14px;
+
+  padding:20px;
+
+  line-height:1.6;
+
+}
+
+
+.activity li{
+
+  margin:7px 0;
+
+}
+
+
+/* =====================================================
+   AVISOS
+===================================================== */
+
+.notice{
+
+  border-left:
+    4px solid var(--primary);
+
+  padding:14px 15px;
+
+  background:#eef8f1;
+
+  border-radius:8px;
+
+  margin-top:15px;
+
+  line-height:1.55;
+
+}
+
+
+.warning{
+
+  border-left:
+    4px solid var(--warning);
+
+  padding:14px 15px;
+
+  background:#fff8e6;
+
+  border-radius:8px;
+
+  margin-top:15px;
+
+  line-height:1.55;
+
+}
+
+
+/* =====================================================
+   OPÇÕES / TERMOS
+===================================================== */
+
+.option{
+
+  display:flex;
+
+  gap:10px;
+
+  align-items:flex-start;
+
+  margin:12px 0;
+
+  padding:13px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:10px;
+
+  background:#fff;
+
+}
+
+
+.option input{
+
+  margin-top:4px;
+
+  min-width:17px;
+
+  min-height:17px;
+
+}
+
+
+/* =====================================================
+   BOTÃO ENVIAR
+===================================================== */
+
+button{
+
+  width:100%;
+
+  border:0;
+
+  border-radius:12px;
+
+  background:var(--primary);
+
+  color:#fff;
+
+  padding:15px;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+}
+
+
+button:hover{
+
+  background:var(--primary2);
+
+}
+
+
+button:disabled{
+
+  opacity:.65;
+
+  cursor:not-allowed;
+
+}
+
+
+/* =====================================================
+   BOTÃO PROF. PEDRO IA
+===================================================== */
+
+.ai-button{
+
+  display:block;
+
+  width:100%;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2457d6,
+      #3974e8
+    );
+
+  color:white;
+
+  padding:15px 18px;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  margin:0 0 18px;
+
+  transition:.2s;
+
+  box-shadow:
+    0 6px 16px #2457d622;
+
+}
+
+
+.ai-button:hover{
+
+  background:
+    linear-gradient(
+      135deg,
+      #173d9b,
+      #2457d6
+    );
+
+  transform:translateY(-1px);
+
+}
+
+
+/* =====================================================
+   ESTADOS
+===================================================== */
+
+.hidden{
+
+  display:none;
+
+}
+
+
+.success{
+
+  background:#eaf8f1;
+
+  border:
+    1px solid #b8e4cc;
+
+  color:#0c613b;
+
+  border-radius:14px;
+
+  padding:20px;
+
+  margin-top:18px;
+
+  line-height:1.6;
+
+}
+
+
+.error{
+
+  color:var(--danger);
+
+  font-size:13px;
+
+  margin-top:8px;
+
+  line-height:1.5;
+
+}
+
+
+.required{
+
+  color:#c5263d;
+
+}
+
+
+.counter{
+
+  text-align:right;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  margin-top:5px;
+
+  font-weight:600;
+
+}
+
+
+.locked{
+
+  background:#f1f3f7;
+
+  border:
+    1px solid #d7dce5;
+
+  padding:14px;
+
+  border-radius:10px;
+
+  color:#4d5668;
+
+  line-height:1.5;
+
+}
+
+
+/* =====================================================
+   INFORMAÇÕES DO DOCUMENTO
+===================================================== */
+
+.document-info{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:12px;
+
+  margin-top:15px;
+
+}
+
+
+.info-box{
+
+  background:#f7f9fd;
+
+  border:1px solid var(--border);
+
+  border-radius:10px;
+
+  padding:13px;
+
+}
+
+
+.info-title{
+
+  font-size:12px;
+
+  color:var(--muted);
+
+  margin-bottom:4px;
+
+}
+
+
+.info-value{
+
+  font-weight:700;
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer{
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  margin-top:25px;
+
+  line-height:1.6;
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media(max-width:600px){
+
+  .container{
+
+    padding-top:15px;
+
+  }
+
+
+  .header{
+
+    padding:22px 18px;
+
+  }
+
+
+  .logo-area{
+
+    flex-direction:column;
+
+    text-align:center;
+
+  }
+
+
+  .logos{
+
+    order:-1;
+
+  }
+
+
+  .logo,
+  .logo-pedro{
+
+    width:68px;
+
+    height:68px;
+
+  }
+
+
+  .header h1{
+
+    font-size:22px;
+
+  }
+
+
+  .header p{
+
+    font-size:14px;
+
+  }
+
+
+  .card{
+
+    padding:19px;
+
+  }
+
+
+  textarea{
+
+    min-height:220px;
+
+  }
+
+
+  .document-info{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- =====================================================
+     CABEÇALHO
+===================================================== -->
+
+<header class="header">
+
+<div class="logo-area">
+
+<div class="header-content">
+
+<h1>
+COMPENSAÇÃO DE AUSÊNCIA E NOTA
+</h1>
+
+<p>
+
+<strong>
+História e Geografia
+</strong>
+
+<br>
+
+Escola Estadual Prof. Ruth Sá
+
+<br>
+
+Leia atentamente todas as orientações antes de iniciar
+sua atividade.
+
+</p>
+
+</div>
+
+
+<div class="logos">
+
+<img
+src="logo-escola.png"
+alt="Logo da Escola Estadual Prof. Ruth Sá"
+class="logo"
+onerror="this.style.display='none'"
+>
+
+
+<img
+src="logo-pedro.png"
+alt="Logo Prof. Pedro"
+class="logo-pedro"
+onerror="this.style.display='none'"
+>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<form id="form">
+
+
+<!-- =====================================================
+     1 — TERMO DE CIÊNCIA
+===================================================== -->
+
+<section class="card">
+
+<h2>
+1. Termo de Ciência e Responsabilidade
+</h2>
+
+
+<div class="warning">
+
+<strong>
+ATENÇÃO — LEIA ANTES DE CONTINUAR
+</strong>
+
+
+<p>
+
+Esta atividade de compensação de ausência e nota deverá ser
+realizada <strong>individualmente</strong> pelo estudante.
+
+</p>
+
+
+<p>
+
+O objetivo da atividade é verificar sua capacidade de
+pesquisar, compreender e explicar o conteúdo estudado
+utilizando suas próprias palavras.
+
+</p>
+
+
+<p>
+
+<strong>
+
+Não é permitida a utilização de ferramentas de
+Inteligência Artificial para produzir, escrever,
+reescrever ou responder o texto desta atividade.
+
+</strong>
+
+</p>
+
+
+<p>
+
+A única ferramenta de Inteligência Artificial autorizada
+é o <strong>Prof. Pedro IA</strong>, exclusivamente como
+apoio à aprendizagem, explicação de conceitos,
+esclarecimento de dúvidas e aprofundamento do conteúdo.
+
+</p>
+
+
+<p>
+
+O estudante <strong>
+
+não deverá solicitar ao Prof. Pedro IA
+que produza o texto final para ser copiado neste formulário.
+
+</strong>
+
+</p>
+
+
+<p>
+
+O professor poderá solicitar posteriormente que o estudante
+explique oralmente ou por escrito algum aspecto apresentado
+em sua atividade, caso seja necessário verificar sua
+compreensão do conteúdo.
+
+</p>
+
+</div>
+
+
+<div class="option">
+
+<input
+id="cienciaInicial"
+type="checkbox"
+required
+>
+
+<span>
+
+<strong>
+
+Li, compreendi e aceito o Termo de Ciência e Responsabilidade.
+
+</strong>
+
+<br>
+
+Estou ciente das regras desta atividade e das condições
+para realização da compensação de ausência.
+
+</span>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     2 — IDENTIFICAÇÃO
+===================================================== -->
+
+<section class="card">
+
+<h2>
+2. Identificação do estudante
+</h2>
+
+
+<label class="label">
+
+Nome completo
+
+<span class="required">*</span>
+
+</label>
+
+
+<input
+id="nome"
+type="text"
+required
+placeholder="Digite seu nome completo"
+autocomplete="name"
+>
+
+
+<label class="label">
+
+Série / Sala
+
+<span class="required">*</span>
+
+</label>
+
+
+<select
+id="sala"
+required
+>
+
+<option value="">
+Selecione sua série / sala
+</option>
+
+<option value="1º A">
+1º A
+</option>
+
+<option value="1º B">
+1º B
+</option>
+
+<option value="2º B">
+2º B
+</option>
+
+<option value="2º ADM">
+2º ADM
+</option>
+
+<option value="2º LOG">
+2º LOG
+</option>
+
+<option value="3º A">
+3º A
+</option>
+
+<option value="3º ADM">
+3º ADM
+</option>
+
+<option value="3º LOG">
+3º LOG
+</option>
+
+</select>
+
+
+<div class="help">
+
+A atividade correspondente à sua série será apresentada
+automaticamente após a seleção da sala.
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     3 — ATIVIDADE
+===================================================== -->
+
+<section
+id="atividadeCard"
+class="card hidden"
+>
+
+<h2>
+3. Atividade de Compensação
+</h2>
+
+
+<div
+id="atividade"
+class="activity"
+>
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     4 — ORIENTAÇÕES
+===================================================== -->
+
+<section
+id="orientacaoCard"
+class="card hidden"
+>
+
+<h2>
+4. Orientações para a produção
+</h2>
+
+
+<div class="activity">
+
+<p>
+
+Você deverá produzir um <strong>
+texto argumentativo e autoral
+</strong>
+sobre o tema indicado para sua série.
+
+</p>
+
+
+<p>
+
+Seu texto deverá demonstrar que você realmente
+compreendeu o conteúdo pesquisado.
+
+</p>
+
+
+<strong>
+Seu texto deverá apresentar:
+</strong>
+
+
+<ul>
+
+<li>
+Introdução do tema;
+</li>
+
+<li>
+Explicação dos principais aspectos do assunto;
+</li>
+
+<li>
+Informações históricas relevantes;
+</li>
+
+<li>
+Relações entre causas, acontecimentos e consequências;
+</li>
+
+<li>
+Desenvolvimento de uma argumentação própria;
+</li>
+
+<li>
+Conclusão.
+</li>
+
+</ul>
+
+
+<div class="notice">
+
+<strong>
+Importante:
+</strong>
+
+<br><br>
+
+Não copie textos encontrados na internet.
+
+<br><br>
+
+Pesquise, leia, compreenda e depois escreva
+utilizando suas próprias palavras.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     5 — TEXTO
+===================================================== -->
+
+<section
+id="respostaCard"
+class="card hidden"
+>
+
+<h2>
+5. Produção do Texto Argumentativo
+</h2>
+
+
+<label class="label">
+
+Seu texto argumentativo
+
+<span class="required">*</span>
+
+</label>
+
+
+<textarea
+id="resposta"
+required
+minlength="1000"
+maxlength="10000"
+placeholder="Escreva aqui seu texto argumentativo. Organize sua produção em introdução, desenvolvimento e conclusão."
+></textarea>
+
+
+<div
+id="contador"
+class="counter"
+>
+
+0 / 10.000 caracteres
+
+</div>
+
+
+<div class="help">
+
+<strong>
+Mínimo obrigatório: 1.000 caracteres.
+</strong>
+
+<br>
+
+Máximo permitido: 10.000 caracteres.
+
+<br><br>
+
+Desenvolva seu texto de maneira completa,
+apresentando introdução, desenvolvimento e conclusão.
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     6 — COMPREENSÃO
+===================================================== -->
+
+<section
+id="compreensaoCard"
+class="card hidden"
+>
+
+<h2>
+6. Verificação de Compreensão
+</h2>
+
+
+<p>
+
+Estas perguntas fazem parte da atividade e têm como objetivo
+verificar se você compreendeu o conteúdo que pesquisou.
+
+</p>
+
+
+<label class="label">
+
+Qual foi a informação ou ideia mais importante que você
+aprendeu durante sua pesquisa?
+
+<span class="required">*</span>
+
+</label>
+
+
+<textarea
+id="aprendizado"
+required
+placeholder="Explique com suas próprias palavras aquilo que você considerou mais importante aprender."
+></textarea>
+
+
+<label class="label">
+
+Explique por que o tema estudado é importante para
+compreender a História.
+
+<span class="required">*</span>
+
+</label>
+
+
+<textarea
+id="importancia"
+required
+placeholder="Explique com suas próprias palavras."
+></textarea>
+
+</section>
+
+
+
+<!-- =====================================================
+     7 — FONTES
+===================================================== -->
+
+<section
+id="fontesCard"
+class="card hidden"
+>
+
+<h2>
+7. Fontes de Pesquisa
+</h2>
+
+
+<label class="label">
+
+Quais fontes você utilizou para realizar sua pesquisa?
+
+<span class="required">*</span>
+
+</label>
+
+
+<textarea
+id="fontes"
+required
+placeholder="Informe os sites, livros, materiais didáticos, vídeos ou outras fontes utilizadas."
+></textarea>
+
+
+<div class="help">
+
+Informe somente as fontes que realmente foram utilizadas
+durante sua pesquisa.
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     8 — INTELIGÊNCIA ARTIFICIAL
+===================================================== -->
+
+<section
+id="iaCard"
+class="card hidden"
+>
+
+<h2>
+8. Uso de Inteligência Artificial
+</h2>
+
+
+<a
+href="https://prof-pedro-ia.pedro970oliver.workers.dev"
+target="_blank"
+rel="noopener noreferrer"
+class="ai-button"
+>
+
+🤖 Acessar o Prof. Pedro IA
+
+</a>
+
+
+<div class="locked">
+
+<strong>
+Regra da atividade:
+</strong>
+
+
+<p>
+
+A utilização de ferramentas de Inteligência Artificial
+para produzir o texto final desta atividade
+<strong>não é permitida.</strong>
+
+</p>
+
+
+<p>
+
+A única ferramenta de IA autorizada é o
+<strong>Prof. Pedro IA</strong>,
+exclusivamente para apoio à aprendizagem.
+
+</p>
+
+</div>
+
+
+<label class="label">
+
+Durante a realização da atividade,
+você utilizou o Prof. Pedro IA?
+
+<span class="required">*</span>
+
+</label>
+
+
+<div class="option">
+
+<input
+type="radio"
+name="usoIA"
+value="sim"
+required
+>
+
+<span>
+
+Sim, utilizei o Prof. Pedro IA para estudar,
+tirar dúvidas ou compreender o conteúdo.
+
+</span>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="radio"
+name="usoIA"
+value="nao"
+>
+
+<span>
+
+Não utilizei o Prof. Pedro IA.
+
+</span>
+
+</div>
+
+
+<label class="label">
+
+Se utilizou o Prof. Pedro IA, explique brevemente
+como ele foi utilizado.
+
+</label>
+
+
+<textarea
+id="comoIA"
+placeholder="Ex.: utilizei para entender um conceito, tirar uma dúvida ou pedir uma explicação."
+></textarea>
+
+</section>
+
+
+
+<!-- =====================================================
+     9 — DECLARAÇÃO
+===================================================== -->
+
+<section
+id="declaracaoCard"
+class="card hidden"
+>
+
+<h2>
+9. Declaração Final de Autoria
+</h2>
+
+
+<div class="warning">
+
+<p>
+
+<strong>
+Declaração do estudante
+</strong>
+
+</p>
+
+
+<p>
+
+Declaro que o texto apresentado nesta atividade foi
+produzido por mim, com base na minha compreensão
+do conteúdo pesquisado.
+
+</p>
+
+
+<p>
+
+Declaro que não utilizei ferramentas de Inteligência
+Artificial para produzir ou escrever o texto final
+desta atividade.
+
+</p>
+
+
+<p>
+
+Caso tenha utilizado o Prof. Pedro IA, ele foi utilizado
+somente como ferramenta de apoio à aprendizagem,
+conforme as orientações apresentadas neste formulário.
+
+</p>
+
+
+<p>
+
+Estou ciente de que o professor poderá solicitar
+esclarecimentos sobre o conteúdo apresentado para
+verificar minha compreensão da atividade.
+
+</p>
+
+</div>
+
+
+<div class="option">
+
+<input
+id="declaracao"
+type="checkbox"
+required
+>
+
+<span>
+
+<strong>
+
+Declaro que as informações acima são verdadeiras e que
+compreendi as orientações da atividade.
+
+</strong>
+
+</span>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     10 — ENVIO
+===================================================== -->
+
+<section
+id="enviarCard"
+class="card hidden"
+>
+
+<div class="notice">
+
+<strong>
+📄 Após o envio
+</strong>
+
+<br><br>
+
+Sua atividade será registrada automaticamente na planilha
+do professor e um documento em PDF será gerado no sistema.
+
+<br><br>
+
+Confira todas as respostas antes de clicar em
+<strong>Enviar Atividade</strong>.
+
+</div>
+
+
+<br>
+
+
+<button
+type="submit"
+>
+
+Enviar Atividade
+
+</button>
+
+
+<div id="mensagem"></div>
+
+</section>
+
+
+</form>
+
+
+
+<footer>
+
+<strong>
+Compensação de Ausência e Nota
+</strong>
+
+<br>
+
+História e Geografia
+
+<br>
+
+Prof. Pedro Guilherme de Oliveira
+
+<br><br>
+
+Escola Estadual Prof. Ruth Sá
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   ATIVIDADES POR ANO
+===================================================== */
+
+const atividades = {
+
+  1: {
+
+    titulo:
+      "1º Ano — Os Povos Pré-Colombianos",
+
+    html: `
+
+      <p>
+
+      <strong>Orientação:</strong>
+
+      Pesquise e estude sobre os principais povos
+      pré-colombianos, com destaque para Maias,
+      Astecas e Incas.
+
+      </p>
+
+      <p>
+      Em seu texto argumentativo, explique:
+      </p>
+
+      <ul>
+
+      <li>
+      Localização dos povos;
+      </li>
+
+      <li>
+      Organização política e social;
+      </li>
+
+      <li>
+      Economia;
+      </li>
+
+      <li>
+      Religião e cultura;
+      </li>
+
+      <li>
+      Principais conhecimentos e realizações;
+      </li>
+
+      <li>
+      Relação desses povos com a chegada dos europeus
+      à América.
+      </li>
+
+      </ul>
+
+      <p>
+
+      Ao final, desenvolva uma argumentação explicando
+
+      <strong>
+
+      a importância dos povos pré-colombianos
+      para a História da América.
+
+      </strong>
+
+      </p>
+
+      <div class="notice">
+
+      <strong>
+      Produção obrigatória:
+      </strong>
+
+      <br><br>
+
+      Seu trabalho deverá ser apresentado como um
+      texto argumentativo, utilizando suas próprias palavras.
+
+      </div>
+
+    `
+
+  },
+
+
+  2: {
+
+    titulo:
+      "2º Ano — Getúlio Vargas e a década de 1950",
+
+    html: `
+
+      <p>
+
+      <strong>Orientação:</strong>
+
+      Estude o contexto político brasileiro relacionado
+      a Getúlio Vargas e à década de 1950, considerando
+      principalmente seu segundo governo,
+      entre 1951 e 1954.
+
+      </p>
+
+      <p>
+      Em seu texto argumentativo, explique:
+      </p>
+
+      <ul>
+
+      <li>
+      O contexto do retorno de Getúlio Vargas à Presidência;
+      </li>
+
+      <li>
+      As principais características de seu segundo governo;
+      </li>
+
+      <li>
+      O nacionalismo econômico;
+      </li>
+
+      <li>
+      A criação e importância da Petrobras;
+      </li>
+
+      <li>
+      As relações entre governo, trabalhadores e oposição;
+      </li>
+
+      <li>
+      A crise política de 1954;
+      </li>
+
+      <li>
+      O suicídio de Getúlio Vargas e suas consequências políticas.
+      </li>
+
+      </ul>
+
+      <p>
+
+      Ao final, desenvolva uma argumentação explicando
+
+      <strong>
+
+      a importância do governo Vargas na política e
+      na economia brasileira da década de 1950.
+
+      </strong>
+
+      </p>
+
+      <div class="notice">
+
+      <strong>
+      Produção obrigatória:
+      </strong>
+
+      <br><br>
+
+      Não produza apenas uma lista de informações.
+      Construa um texto explicando e relacionando
+      os acontecimentos.
+
+      </div>
+
+    `
+
+  },
+
+
+  3: {
+
+    titulo:
+      "3º Ano — A Corrida Espacial",
+
+    html: `
+
+      <p>
+
+      <strong>Orientação:</strong>
+
+      Estude a Corrida Espacial, desenvolvida principalmente
+      durante o contexto da Guerra Fria, envolvendo
+      Estados Unidos e União Soviética.
+
+      </p>
+
+      <p>
+      Em seu texto argumentativo, explique:
+      </p>
+
+      <ul>
+
+      <li>
+      A relação entre Guerra Fria e Corrida Espacial;
+      </li>
+
+      <li>
+      A participação da União Soviética;
+      </li>
+
+      <li>
+      O lançamento do Sputnik;
+      </li>
+
+      <li>
+      O primeiro ser humano no espaço;
+      </li>
+
+      <li>
+      A participação dos Estados Unidos;
+      </li>
+
+      <li>
+      A chegada do ser humano à Lua;
+      </li>
+
+      <li>
+      A importância tecnológica e política da Corrida Espacial.
+      </li>
+
+      </ul>
+
+      <p>
+
+      Ao final, desenvolva uma argumentação explicando
+
+      <strong>
+
+      por que a Corrida Espacial foi importante para
+      a disputa entre Estados Unidos e União Soviética
+      durante a Guerra Fria.
+
+      </strong>
+
+      </p>
+
+      <div class="notice">
+
+      <strong>
+      Produção obrigatória:
+      </strong>
+
+      <br><br>
+
+      Apresente não apenas os acontecimentos,
+      mas também explique suas relações com a Guerra Fria.
+
+      </div>
+
+    `
+
+  }
+
+};
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const form =
+  document.getElementById("form");
+
+const sala =
+  document.getElementById("sala");
+
+const atividadeCard =
+  document.getElementById("atividadeCard");
+
+const atividade =
+  document.getElementById("atividade");
+
+const orientacaoCard =
+  document.getElementById("orientacaoCard");
+
+const respostaCard =
+  document.getElementById("respostaCard");
+
+const compreensaoCard =
+  document.getElementById("compreensaoCard");
+
+const fontesCard =
+  document.getElementById("fontesCard");
+
+const iaCard =
+  document.getElementById("iaCard");
+
+const declaracaoCard =
+  document.getElementById("declaracaoCard");
+
+const enviarCard =
+  document.getElementById("enviarCard");
+
+const resposta =
+  document.getElementById("resposta");
+
+const contador =
+  document.getElementById("contador");
+
+const mensagem =
+  document.getElementById("mensagem");
+
+
+/* =====================================================
+   IDENTIFICA O ANO
+===================================================== */
+
+function identificarAno(salaSelecionada){
+
+  if(
+    salaSelecionada.startsWith("1")
+  ){
+
+    return "1";
+
+  }
+
+  if(
+    salaSelecionada.startsWith("2")
+  ){
+
+    return "2";
+
+  }
+
+  if(
+    salaSelecionada.startsWith("3")
+  ){
+
+    return "3";
+
+  }
+
+  return null;
+
+}
+
+
+/* =====================================================
+   ESCONDE TODAS AS SEÇÕES
+===================================================== */
+
+function esconderSecoes(){
+
+  atividadeCard.classList.add("hidden");
+
+  orientacaoCard.classList.add("hidden");
+
+  respostaCard.classList.add("hidden");
+
+  compreensaoCard.classList.add("hidden");
+
+  fontesCard.classList.add("hidden");
+
+  iaCard.classList.add("hidden");
+
+  declaracaoCard.classList.add("hidden");
+
+  enviarCard.classList.add("hidden");
+
+}
+
+
+/* =====================================================
+   MOSTRA A ATIVIDADE
+===================================================== */
+
+sala.addEventListener(
+  "change",
+  function(){
+
+    const salaSelecionada =
+      this.value;
+
+    if(!salaSelecionada){
+
+      esconderSecoes();
+
+      return;
+
+    }
+
+    const ano =
+      identificarAno(salaSelecionada);
+
+    if(
+      !ano ||
+      !atividades[ano]
+    ){
+
+      esconderSecoes();
+
+      return;
+
+    }
+
+    atividade.innerHTML = `
+
+      <h3>
+      ${atividades[ano].titulo}
+      </h3>
+
+      ${atividades[ano].html}
+
+    `;
+
+    atividadeCard.classList.remove("hidden");
+
+    orientacaoCard.classList.remove("hidden");
+
+    respostaCard.classList.remove("hidden");
+
+    compreensaoCard.classList.remove("hidden");
+
+    fontesCard.classList.remove("hidden");
+
+    iaCard.classList.remove("hidden");
+
+    declaracaoCard.classList.remove("hidden");
+
+    enviarCard.classList.remove("hidden");
+
+  }
+
+);
+
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+resposta.addEventListener(
+  "input",
+  function(){
+
+    const quantidade =
+      this.value.length;
+
+    contador.textContent =
+      quantidade.toLocaleString("pt-BR") +
+      " / 10.000 caracteres";
+
+    if(
+      quantidade < 1000
+    ){
+
+      contador.style.color =
+        "#a51d2d";
+
+    }
+
+    else{
+
+      contador.style.color =
+        "#0c613b";
+
+    }
+
+    if(
+      quantidade >= 10000
+    ){
+
+      contador.textContent =
+        "10.000 / 10.000 caracteres — limite atingido";
+
+    }
+
+  }
+
+);
+
+
+/* =====================================================
+   ENVIO
+===================================================== */
+
+form.addEventListener(
+  "submit",
+  function(e){
+
+    e.preventDefault();
+
+    mensagem.innerHTML = "";
+
+
+    /* -------------------------------------------------
+       VALIDA FORMULÁRIO
+    ------------------------------------------------- */
+
+    if(!form.checkValidity()){
+
+      form.reportValidity();
+
+      return;
+
+    }
+
+
+    /* -------------------------------------------------
+       VALIDA USO DA IA
+    ------------------------------------------------- */
+
+    const usoIASelecionado =
+      document.querySelector(
+        'input[name="usoIA"]:checked'
+      );
+
+
+    if(
+      usoIASelecionado &&
+      usoIASelecionado.value === "sim" &&
+      document
+        .getElementById("comoIA")
+        .value
+        .trim() === ""
+    ){
+
+      mensagem.innerHTML = `
+
+        <div class="error">
+
+        <strong>
+        Explique como você utilizou o Prof. Pedro IA.
+        </strong>
+
+        <br><br>
+
+        Informe se utilizou a ferramenta para tirar dúvidas,
+        compreender um conceito, revisar uma explicação,
+        aprofundar o conteúdo ou outra finalidade relacionada
+        à aprendizagem.
+
+        </div>
+
+      `;
+
+      document
+        .getElementById("comoIA")
+        .focus();
+
+      return;
+
+    }
+
+
+    /* -------------------------------------------------
+       MÍNIMO DE 1.000 CARACTERES
+    ------------------------------------------------- */
+
+    if(
+      resposta.value.trim().length < 1000
+    ){
+
+      mensagem.innerHTML = `
+
+        <div class="error">
+
+        <strong>
+        Seu texto ainda está muito curto.
+        </strong>
+
+        <br><br>
+
+        O texto precisa possuir pelo menos
+        <strong>1.000 caracteres</strong>.
+
+        <br><br>
+
+        Desenvolva melhor sua explicação,
+        apresentando introdução, desenvolvimento
+        e conclusão.
+
+        </div>
+
+      `;
+
+      resposta.focus();
+
+      return;
+
+    }
+
+
+    /* -------------------------------------------------
+       MÁXIMO
+    ------------------------------------------------- */
+
+    if(
+      resposta.value.length > 10000
+    ){
+
+      mensagem.innerHTML = `
+
+        <div class="error">
+
+        <strong>
+        O limite máximo de 10.000 caracteres foi ultrapassado.
+        </strong>
+
+        <br><br>
+
+        Reduza o tamanho do texto antes de enviar.
+
+        </div>
+
+      `;
+
+      resposta.focus();
+
+      return;
+
+    }
+
+
+    /* -------------------------------------------------
+       TEMA
+    ------------------------------------------------- */
+
+    const ano =
+      identificarAno(sala.value);
+
+    const tema =
+      atividades[ano].titulo;
+
+
+    /* -------------------------------------------------
+       DATA E HORA
+    ------------------------------------------------- */
+
+    const agora =
+      new Date();
+
+    const dataHora =
+      agora.toLocaleString(
+        "pt-BR"
+      );
+
+
+    /* -------------------------------------------------
+       TERMOS
+    ------------------------------------------------- */
+
+    const termoCiencia =
+      document
+        .getElementById("cienciaInicial")
+        .checked
+        ? "ACEITO DIGITALMENTE"
+        : "NÃO ACEITO";
+
+
+    const declaracaoFinal =
+      document
+        .getElementById("declaracao")
+        .checked
+        ? "DECLARADO E ACEITO DIGITALMENTE"
+        : "NÃO DECLARADO";
+
+
+    /* -------------------------------------------------
+       DADOS
+    ------------------------------------------------- */
+
+    const dados = {
+
+      dataHora:
+
+        dataHora,
+
+      nome:
+
+        document
+          .getElementById("nome")
+          .value
+          .trim(),
+
+      sala:
+
+        sala.value,
+
+      tema:
+
+        tema,
+
+      texto:
+
+        document
+          .getElementById("resposta")
+          .value
+          .trim(),
+
+      aprendizado:
+
+        document
+          .getElementById("aprendizado")
+          .value
+          .trim(),
+
+      importancia:
+
+        document
+          .getElementById("importancia")
+          .value
+          .trim(),
+
+      fontes:
+
+        document
+          .getElementById("fontes")
+          .value
+          .trim(),
+
+      usoIA:
+
+        usoIASelecionado.value,
+
+      comoIA:
+
+        document
+          .getElementById("comoIA")
+          .value
+          .trim(),
+
+      termoCiencia:
+
+        termoCiencia,
+
+      declaracaoFinal:
+
+        declaracaoFinal,
+
+      dataAceite:
+
+        dataHora,
+
+      escola:
+
+        "Escola Estadual Prof. Ruth Sá",
+
+      tituloFormulario:
+
+        "Compensação de Ausência e Nota"
+
+    };
+
+
+    /* -------------------------------------------------
+       URL DO APPS SCRIPT
+    ------------------------------------------------- */
+
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwZppsVvEa3LAWYvBrH3TXHAaAeV1o8uwMCWqqLToxF1-3G3mcYbYli4cWAS5XSVHJv/exec";
+
+
+    /* -------------------------------------------------
+       PREPARA OS DADOS
+    ------------------------------------------------- */
+
+    const dadosFormulario =
+      new URLSearchParams();
+
+
+    Object.keys(dados).forEach(
+      function(chave){
+
+        dadosFormulario.append(
+          chave,
+          dados[chave]
+        );
+
+      }
+    );
+
+
+    /* -------------------------------------------------
+       BOTÃO
+    ------------------------------------------------- */
+
+    const botaoEnviar =
+      form.querySelector(
+        'button[type="submit"]'
+      );
+
+
+    botaoEnviar.disabled = true;
+
+    botaoEnviar.textContent =
+      "Enviando atividade...";
+
+
+    mensagem.innerHTML = `
+
+      <div class="notice">
+
+      ⏳ Registrando sua atividade e gerando o documento...
+
+      <br><br>
+
+      Aguarde alguns segundos.
+
+      </div>
+
+    `;
+
+
+    /* -------------------------------------------------
+       ENVIO
+    ------------------------------------------------- */
+
+    fetch(
+      SCRIPT_URL,
+      {
+
+        method:"POST",
+
+        body:dadosFormulario,
+
+        mode:"no-cors"
+
+      }
+
+    )
+
+    .then(
+      function(){
+
+        mensagem.innerHTML = `
+
+          <div class="success">
+
+          <strong>
+          ✅ Atividade enviada com sucesso!
+          </strong>
+
+          <br><br>
+
+          Estudante:
+          <strong>
+          ${dados.nome}
+          </strong>
+
+          <br>
+
+          Sala:
+          <strong>
+          ${dados.sala}
+          </strong>
+
+          <br>
+
+          Tema:
+          <strong>
+          ${dados.tema}
+          </strong>
+
+          <br><br>
+
+          Sua atividade foi registrada.
+
+          <br><br>
+
+          O Termo de Ciência e a Declaração Final
+          foram registrados juntamente com a atividade.
+
+          <br><br>
+
+          📄 Um PDF da atividade foi gerado automaticamente
+          no sistema do professor.
+
+          <br><br>
+
+          Você já pode fechar esta página.
+
+          </div>
+
+        `;
+
+        botaoEnviar.textContent =
+          "Atividade Enviada ✓";
+
+      }
+
+    )
+
+    .catch(
+      function(erro){
+
+        console.error(
+          "Erro ao enviar:",
+          erro
+        );
+
+        mensagem.innerHTML = `
+
+          <div class="error">
+
+          <strong>
+          ❌ Não foi possível enviar a atividade.
+          </strong>
+
+          <br><br>
+
+          Verifique sua conexão com a internet
+          e tente novamente.
+
+          </div>
+
+        `;
+
+        botaoEnviar.disabled = false;
+
+        botaoEnviar.textContent =
+          "Enviar Atividade";
+
+      }
+
+    );
+
+
+    /* -------------------------------------------------
+       ROLA PARA A MENSAGEM
+    ------------------------------------------------- */
+
+    window.scrollTo({
+
+      top:
+        document.body.scrollHeight,
+
+      behavior:
+        "smooth"
+
+    });
+
+  }
+
+);
+
+</script>
+
+</body>
+
+</html>
