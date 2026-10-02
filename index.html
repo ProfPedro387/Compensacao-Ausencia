@@ -1,29 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<title>
-Compensação de Ausência e Nota — História e Geografia
-</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compensação de Ausência e Nota — História e Geografia</title>
 
 <style>
-
-/* =====================================================
-   VARIÁVEIS
-===================================================== */
-
 :root{
-
   --bg:#f4f7fb;
-  --card:#ffffff;
+  --card:#fff;
   --text:#172033;
   --muted:#657089;
   --primary:#339754;
@@ -32,727 +17,388 @@ Compensação de Ausência e Nota — História e Geografia
   --ok:#0c613b;
   --warning:#9a6700;
   --danger:#a51d2d;
-
+  --blue:#2457d6;
 }
 
-
-/* =====================================================
-   RESET
-===================================================== */
-
-*{
-  box-sizing:border-box;
-}
-
-
-/* =====================================================
-   BODY
-===================================================== */
+*{box-sizing:border-box}
 
 body{
-
   margin:0;
-
   background:var(--bg);
-
   color:var(--text);
-
-  font-family:
-    Inter,
-    Segoe UI,
-    Arial,
-    sans-serif;
-
+  font-family:Inter,Segoe UI,Arial,sans-serif
 }
-
-
-/* =====================================================
-   CONTAINER
-===================================================== */
 
 .container{
-
   max-width:900px;
-
   margin:0 auto;
-
-  padding:28px 16px 60px;
-
+  padding:28px 16px 60px
 }
-
-
-/* =====================================================
-   CABEÇALHO
-===================================================== */
 
 .header{
-
-  background:
-    linear-gradient(
-      135deg,
-      #326e0b,
-      #207e11
-    );
-
-  color:white;
-
+  background:linear-gradient(135deg,#326e0b,#207e11);
+  color:#fff;
   border-radius:20px;
-
   padding:28px;
-
   margin-bottom:18px;
-
-  box-shadow:
-    0 10px 30px #173d9b22;
-
+  box-shadow:0 10px 30px #173d9b22
 }
-
 
 .logo-area{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
-  gap:25px;
-
+  gap:25px
 }
-
 
 .logos{
-
   display:flex;
-
   align-items:center;
-
   gap:14px;
-
-  flex-shrink:0;
-
+  flex-shrink:0
 }
 
-
-.logo{
-
-  width:78px;
-
-  height:78px;
-
-  object-fit:contain;
-
-  background:white;
-
-  border-radius:14px;
-
-  padding:7px;
-
-  box-shadow:
-    0 5px 15px #00000020;
-
-}
-
-
+.logo,
 .logo-pedro{
-
   width:78px;
-
   height:78px;
-
   object-fit:contain;
-
-  background:white;
-
-  border-radius:50%;
-
+  background:#fff;
   padding:7px;
-
-  box-shadow:
-    0 5px 15px #00000020;
-
+  box-shadow:0 5px 15px #00000020
 }
 
+.logo{border-radius:14px}
+.logo-pedro{border-radius:50%}
 
 .header-content{
-
-  flex:1;
-
+  flex:1
 }
-
 
 .header h1{
-
   margin:0 0 8px;
-
   font-size:28px;
-
-  line-height:1.2;
-
+  line-height:1.2
 }
-
 
 .header p{
-
   margin:0;
-
   line-height:1.55;
-
-  opacity:.94;
-
+  opacity:.94
 }
-
-
-/* =====================================================
-   CARDS
-===================================================== */
 
 .card{
-
   background:var(--card);
-
   border:1px solid var(--border);
-
   border-radius:18px;
-
   padding:24px;
-
   margin:16px 0;
-
-  box-shadow:
-    0 5px 18px #18243b0b;
-
+  box-shadow:0 5px 18px #18243b0b
 }
-
 
 h2{
-
   font-size:19px;
-
-  margin:0 0 18px;
-
+  margin:0 0 18px
 }
-
 
 h3{
-
   margin-top:0;
-
-  color:var(--primary2);
-
+  color:var(--primary2)
 }
-
-
-/* =====================================================
-   CAMPOS
-===================================================== */
 
 .label{
-
   display:block;
-
   font-weight:700;
-
-  margin:15px 0 8px;
-
+  margin:15px 0 8px
 }
-
 
 input[type=text],
 select,
 textarea{
-
   width:100%;
-
-  border:
-    1px solid #ccd5e4;
-
+  border:1px solid #ccd5e4;
   border-radius:10px;
-
   padding:12px;
-
   font:inherit;
-
-  background:white;
-
+  background:#fff
 }
-
 
 input[type=text]:focus,
 select:focus,
 textarea:focus{
-
   outline:none;
-
   border-color:var(--primary);
-
-  box-shadow:
-    0 0 0 3px #33975420;
-
+  box-shadow:0 0 0 3px #33975420
 }
-
 
 textarea{
-
   min-height:180px;
-
   resize:vertical;
-
-  line-height:1.6;
-
+  line-height:1.6
 }
-
-
-/* =====================================================
-   ATIVIDADE
-===================================================== */
 
 .activity{
-
   background:#f7f9fd;
-
   border:1px solid var(--border);
-
   border-radius:14px;
-
   padding:20px;
-
-  line-height:1.6;
-
+  line-height:1.6
 }
-
 
 .activity li{
-
-  margin:7px 0;
-
+  margin:7px 0
 }
 
-
-/* =====================================================
-   AVISOS
-===================================================== */
+.notice,
+.warning{
+  padding:14px 15px;
+  border-radius:8px;
+  margin-top:15px;
+  line-height:1.55
+}
 
 .notice{
-
-  border-left:
-    4px solid var(--primary);
-
-  padding:14px 15px;
-
-  background:#eef8f1;
-
-  border-radius:8px;
-
-  margin-top:15px;
-
-  line-height:1.55;
-
+  border-left:4px solid var(--primary);
+  background:#eef8f1
 }
-
 
 .warning{
-
-  border-left:
-    4px solid var(--warning);
-
-  padding:14px 15px;
-
-  background:#fff8e6;
-
-  border-radius:8px;
-
-  margin-top:15px;
-
-  line-height:1.55;
-
+  border-left:4px solid var(--warning);
+  background:#fff8e6
 }
-
-
-/* =====================================================
-   OPÇÕES / TERMOS
-===================================================== */
 
 .option{
-
   display:flex;
-
   gap:10px;
-
   align-items:flex-start;
-
   margin:12px 0;
-
   padding:13px;
-
-  border:
-    1px solid var(--border);
-
+  border:1px solid var(--border);
   border-radius:10px;
-
-  background:#fff;
-
+  background:#fff
 }
-
 
 .option input{
-
   margin-top:4px;
-
   min-width:17px;
-
-  min-height:17px;
-
+  min-height:17px
 }
-
-
-/* =====================================================
-   BOTÃO ENVIAR
-===================================================== */
 
 button{
-
   width:100%;
-
   border:0;
-
   border-radius:12px;
-
   background:var(--primary);
-
   color:#fff;
-
   padding:15px;
-
   font-size:16px;
-
   font-weight:700;
-
   cursor:pointer;
-
-  transition:.2s;
-
+  transition:.2s
 }
-
 
 button:hover{
-
-  background:var(--primary2);
-
+  background:var(--primary2)
 }
-
 
 button:disabled{
-
   opacity:.65;
-
-  cursor:not-allowed;
-
+  cursor:not-allowed
 }
-
-
-/* =====================================================
-   BOTÃO PROF. PEDRO IA
-===================================================== */
 
 .ai-button{
-
   display:block;
-
   width:100%;
-
   text-align:center;
-
   text-decoration:none;
-
-  background:
-    linear-gradient(
-      135deg,
-      #2457d6,
-      #3974e8
-    );
-
-  color:white;
-
+  background:linear-gradient(135deg,#2457d6,#3974e8);
+  color:#fff;
   padding:15px 18px;
-
   border-radius:12px;
-
   font-size:16px;
-
   font-weight:700;
-
   margin:0 0 18px;
-
   transition:.2s;
-
-  box-shadow:
-    0 6px 16px #2457d622;
-
+  box-shadow:0 6px 16px #2457d622
 }
-
 
 .ai-button:hover{
-
-  background:
-    linear-gradient(
-      135deg,
-      #173d9b,
-      #2457d6
-    );
-
-  transform:translateY(-1px);
-
+  background:linear-gradient(135deg,#173d9b,#2457d6);
+  transform:translateY(-1px)
 }
-
-
-/* =====================================================
-   ESTADOS
-===================================================== */
 
 .hidden{
-
-  display:none;
-
+  display:none
 }
-
 
 .success{
-
   background:#eaf8f1;
-
-  border:
-    1px solid #b8e4cc;
-
+  border:1px solid #b8e4cc;
   color:#0c613b;
-
   border-radius:14px;
-
   padding:20px;
-
   margin-top:18px;
-
-  line-height:1.6;
-
+  line-height:1.6
 }
-
 
 .error{
-
   color:var(--danger);
-
   font-size:13px;
-
   margin-top:8px;
-
-  line-height:1.5;
-
+  line-height:1.5
 }
-
 
 .required{
-
-  color:#c5263d;
-
+  color:#c5263d
 }
-
 
 .counter{
-
   text-align:right;
-
   color:var(--muted);
-
   font-size:12px;
-
   margin-top:5px;
-
-  font-weight:600;
-
+  font-weight:600
 }
-
 
 .locked{
-
   background:#f1f3f7;
-
-  border:
-    1px solid #d7dce5;
-
+  border:1px solid #d7dce5;
   padding:14px;
-
   border-radius:10px;
-
   color:#4d5668;
-
-  line-height:1.5;
-
+  line-height:1.5
 }
 
+.curriculo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:15px
+}
 
-/* =====================================================
-   INFORMAÇÕES DO DOCUMENTO
-===================================================== */
+.curriculo-box{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px
+}
+
+.curriculo-box h4{
+  margin:0 0 10px;
+  color:var(--primary2)
+}
+
+.curriculo-item{
+  border-top:1px solid #e8ecf3;
+  padding:12px 0
+}
+
+.curriculo-item:first-child{
+  border-top:0;
+  padding-top:0
+}
+
+.meta{
+  font-size:13px;
+  color:#344054;
+  margin:4px 0
+}
+
+.meta strong{
+  color:#172033
+}
 
 .document-info{
-
   display:grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
+  grid-template-columns:repeat(2,1fr);
   gap:12px;
-
-  margin-top:15px;
-
+  margin-top:15px
 }
-
 
 .info-box{
-
   background:#f7f9fd;
-
   border:1px solid var(--border);
-
   border-radius:10px;
-
-  padding:13px;
-
+  padding:13px
 }
-
 
 .info-title{
-
   font-size:12px;
-
   color:var(--muted);
-
-  margin-bottom:4px;
-
+  margin-bottom:4px
 }
-
 
 .info-value{
-
-  font-weight:700;
-
+  font-weight:700
 }
-
-
-/* =====================================================
-   RODAPÉ
-===================================================== */
 
 footer{
-
   text-align:center;
-
   color:var(--muted);
-
   font-size:13px;
-
   margin-top:25px;
-
-  line-height:1.6;
-
+  line-height:1.6
 }
 
-
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
+.help{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.5
+}
 
 @media(max-width:600px){
 
   .container{
-
-    padding-top:15px;
-
+    padding-top:15px
   }
-
 
   .header{
-
-    padding:22px 18px;
-
+    padding:22px 18px
   }
-
 
   .logo-area{
-
     flex-direction:column;
-
-    text-align:center;
-
+    text-align:center
   }
-
 
   .logos{
-
-    order:-1;
-
+    order:-1
   }
-
 
   .logo,
   .logo-pedro{
-
     width:68px;
-
-    height:68px;
-
+    height:68px
   }
-
 
   .header h1{
-
-    font-size:22px;
-
+    font-size:22px
   }
-
 
   .header p{
-
-    font-size:14px;
-
+    font-size:14px
   }
-
 
   .card{
-
-    padding:19px;
-
+    padding:19px
   }
-
 
   textarea{
-
-    min-height:220px;
-
+    min-height:220px
   }
 
-
-  .document-info{
-
-    grid-template-columns:1fr;
-
+  .document-info,
+  .curriculo-grid{
+    grid-template-columns:1fr
   }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
 <div class="container">
-
-
-<!-- =====================================================
-     CABEÇALHO
-===================================================== -->
 
 <header class="header">
 
@@ -760,29 +406,15 @@ footer{
 
 <div class="header-content">
 
-<h1>
-COMPENSAÇÃO DE AUSÊNCIA E NOTA
-</h1>
+<h1>COMPENSAÇÃO DE AUSÊNCIA E NOTA</h1>
 
 <p>
-
-<strong>
-História e Geografia
-</strong>
-
-<br>
-
-Escola Estadual Prof. Ruth Sá
-
-<br>
-
-Leia atentamente todas as orientações antes de iniciar
-sua atividade.
-
+<strong>História e Geografia</strong><br>
+Escola Estadual Prof. Ruth Sá<br>
+Leia atentamente todas as orientações antes de iniciar sua atividade.
 </p>
 
 </div>
-
 
 <div class="logos">
 
@@ -792,7 +424,6 @@ alt="Logo da Escola Estadual Prof. Ruth Sá"
 class="logo"
 onerror="this.style.display='none'"
 >
-
 
 <img
 src="logo-pedro.png"
@@ -808,91 +439,59 @@ onerror="this.style.display='none'"
 </header>
 
 
-
 <form id="form">
 
 
-<!-- =====================================================
-     1 — TERMO DE CIÊNCIA
-===================================================== -->
+<!-- ========================================================= -->
+<!-- 1. TERMO -->
+<!-- ========================================================= -->
 
 <section class="card">
 
-<h2>
-1. Termo de Ciência e Responsabilidade
-</h2>
-
+<h2>1. Termo de Ciência e Responsabilidade</h2>
 
 <div class="warning">
 
+<strong>ATENÇÃO — LEIA ANTES DE CONTINUAR</strong>
+
+<p>
+Esta atividade de compensação de ausência e nota deverá ser realizada
+<strong>individualmente</strong> pelo estudante.
+</p>
+
+<p>
+O objetivo da atividade é verificar sua capacidade de pesquisar,
+compreender e explicar o conteúdo estudado utilizando suas próprias palavras.
+</p>
+
+<p>
 <strong>
-ATENÇÃO — LEIA ANTES DE CONTINUAR
+Não é permitida a utilização de ferramentas de Inteligência Artificial
+para produzir, escrever, reescrever ou responder o texto desta atividade.
 </strong>
-
-
-<p>
-
-Esta atividade de compensação de ausência e nota deverá ser
-realizada <strong>individualmente</strong> pelo estudante.
-
 </p>
 
-
 <p>
-
-O objetivo da atividade é verificar sua capacidade de
-pesquisar, compreender e explicar o conteúdo estudado
-utilizando suas próprias palavras.
-
+A única ferramenta de Inteligência Artificial autorizada é o
+<strong>Prof. Pedro IA</strong>, exclusivamente como apoio à aprendizagem,
+explicação de conceitos, esclarecimento de dúvidas e aprofundamento do conteúdo.
 </p>
 
-
 <p>
-
+O estudante
 <strong>
-
-Não é permitida a utilização de ferramentas de
-Inteligência Artificial para produzir, escrever,
-reescrever ou responder o texto desta atividade.
-
+não deverá solicitar ao Prof. Pedro IA que produza o texto final
+para ser copiado neste formulário.
 </strong>
-
 </p>
 
-
 <p>
-
-A única ferramenta de Inteligência Artificial autorizada
-é o <strong>Prof. Pedro IA</strong>, exclusivamente como
-apoio à aprendizagem, explicação de conceitos,
-esclarecimento de dúvidas e aprofundamento do conteúdo.
-
-</p>
-
-
-<p>
-
-O estudante <strong>
-
-não deverá solicitar ao Prof. Pedro IA
-que produza o texto final para ser copiado neste formulário.
-
-</strong>
-
-</p>
-
-
-<p>
-
-O professor poderá solicitar posteriormente que o estudante
-explique oralmente ou por escrito algum aspecto apresentado
-em sua atividade, caso seja necessário verificar sua
-compreensão do conteúdo.
-
+O professor poderá solicitar posteriormente que o estudante explique
+oralmente ou por escrito algum aspecto apresentado em sua atividade,
+caso seja necessário verificar sua compreensão do conteúdo.
 </p>
 
 </div>
-
 
 <div class="option">
 
@@ -905,15 +504,13 @@ required
 <span>
 
 <strong>
-
 Li, compreendi e aceito o Termo de Ciência e Responsabilidade.
-
 </strong>
 
 <br>
 
-Estou ciente das regras desta atividade e das condições
-para realização da compensação de ausência.
+Estou ciente das regras desta atividade e das condições para realização
+da compensação de ausência.
 
 </span>
 
@@ -922,26 +519,20 @@ para realização da compensação de ausência.
 </section>
 
 
-
-<!-- =====================================================
-     2 — IDENTIFICAÇÃO
-===================================================== -->
+<!-- ========================================================= -->
+<!-- 2. IDENTIFICAÇÃO -->
+<!-- ========================================================= -->
 
 <section class="card">
 
-<h2>
-2. Identificação do estudante
-</h2>
-
+<h2>2. Identificação do estudante</h2>
 
 <label class="label">
 
 Nome completo
-
 <span class="required">*</span>
 
 </label>
-
 
 <input
 id="nome"
@@ -955,129 +546,124 @@ autocomplete="name"
 <label class="label">
 
 Série / Sala
-
 <span class="required">*</span>
 
 </label>
 
-
-<select
-id="sala"
-required
->
+<select id="sala" required>
 
 <option value="">
 Selecione sua série / sala
 </option>
 
-<option value="1º A">
-1º A
-</option>
+<option value="1º A">1º A</option>
+<option value="1º B">1º B</option>
 
-<option value="1º B">
-1º B
-</option>
+<option value="2º B">2º B</option>
+<option value="2º ADM">2º ADM</option>
+<option value="2º LOG">2º LOG</option>
 
-<option value="2º B">
-2º B
-</option>
-
-<option value="2º ADM">
-2º ADM
-</option>
-
-<option value="2º LOG">
-2º LOG
-</option>
-
-<option value="3º A">
-3º A
-</option>
-
-<option value="3º ADM">
-3º ADM
-</option>
-
-<option value="3º LOG">
-3º LOG
-</option>
+<option value="3º A">3º A</option>
+<option value="3º ADM">3º ADM</option>
+<option value="3º LOG">3º LOG</option>
 
 </select>
 
 
+<label class="label">
+
+Disciplina
+<span class="required">*</span>
+
+</label>
+
+<select id="disciplina" required disabled>
+
+<option value="">
+Primeiro selecione sua série / sala
+</option>
+
+<option value="Historia">
+História
+</option>
+
+<option value="Geografia">
+Geografia
+</option>
+
+</select>
+
+<div id="disciplinaHelp" class="help">
+
+Selecione primeiro a série / sala.
+Depois escolha História ou Geografia.
+
+</div>
+
 <div class="help">
 
-A atividade correspondente à sua série será apresentada
-automaticamente após a seleção da sala.
+A atividade e a referência curricular serão carregadas automaticamente
+de acordo com a série e a disciplina selecionadas.
 
 </div>
 
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 3. ATIVIDADE -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     3 — ATIVIDADE
-===================================================== -->
+<section id="atividadeCard" class="card hidden">
 
-<section
-id="atividadeCard"
-class="card hidden"
->
+<h2>3. Atividade de Compensação</h2>
 
-<h2>
-3. Atividade de Compensação
-</h2>
-
-
-<div
-id="atividade"
-class="activity"
->
-</div>
+<div id="atividade" class="activity"></div>
 
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 4. GUIA -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     4 — ORIENTAÇÕES
-===================================================== -->
-
-<section
-id="orientacaoCard"
-class="card hidden"
->
+<section id="guiaCard" class="card hidden">
 
 <h2>
-4. Orientações para a produção
+4. Referência curricular — Guia de Aprendizagem
 </h2>
 
+<div id="guiaResumo"></div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 5. ORIENTAÇÃO -->
+<!-- ========================================================= -->
+
+<section id="orientacaoCard" class="card hidden">
+
+<h2>
+5. Orientações para a produção
+</h2>
 
 <div class="activity">
 
 <p>
-
-Você deverá produzir um <strong>
-texto argumentativo e autoral
-</strong>
+Você deverá produzir um
+<strong>texto argumentativo e autoral</strong>
 sobre o tema indicado para sua série.
-
 </p>
-
 
 <p>
-
-Seu texto deverá demonstrar que você realmente
-compreendeu o conteúdo pesquisado.
-
+Seu texto deverá demonstrar que você realmente compreendeu
+o conteúdo pesquisado.
 </p>
-
 
 <strong>
 Seu texto deverá apresentar:
 </strong>
-
 
 <ul>
 
@@ -1090,7 +676,7 @@ Explicação dos principais aspectos do assunto;
 </li>
 
 <li>
-Informações históricas relevantes;
+Informações históricas/geográficas relevantes;
 </li>
 
 <li>
@@ -1107,12 +693,9 @@ Conclusão.
 
 </ul>
 
-
 <div class="notice">
 
-<strong>
-Importante:
-</strong>
+<strong>Importante:</strong>
 
 <br><br>
 
@@ -1120,8 +703,8 @@ Não copie textos encontrados na internet.
 
 <br><br>
 
-Pesquise, leia, compreenda e depois escreva
-utilizando suas próprias palavras.
+Pesquise, leia, compreenda e depois escreva utilizando
+suas próprias palavras.
 
 </div>
 
@@ -1130,29 +713,22 @@ utilizando suas próprias palavras.
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 6. TEXTO -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     5 — TEXTO
-===================================================== -->
-
-<section
-id="respostaCard"
-class="card hidden"
->
+<section id="respostaCard" class="card hidden">
 
 <h2>
-5. Produção do Texto Argumentativo
+6. Produção do Texto Argumentativo
 </h2>
-
 
 <label class="label">
 
 Seu texto argumentativo
-
 <span class="required">*</span>
 
 </label>
-
 
 <textarea
 id="resposta"
@@ -1162,16 +738,11 @@ maxlength="10000"
 placeholder="Escreva aqui seu texto argumentativo. Organize sua produção em introdução, desenvolvimento e conclusão."
 ></textarea>
 
-
-<div
-id="contador"
-class="counter"
->
+<div id="contador" class="counter">
 
 0 / 10.000 caracteres
 
 </div>
-
 
 <div class="help">
 
@@ -1193,38 +764,28 @@ apresentando introdução, desenvolvimento e conclusão.
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 7. COMPREENSÃO -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     6 — COMPREENSÃO
-===================================================== -->
-
-<section
-id="compreensaoCard"
-class="card hidden"
->
+<section id="compreensaoCard" class="card hidden">
 
 <h2>
-6. Verificação de Compreensão
+7. Verificação de Compreensão
 </h2>
 
-
 <p>
-
-Estas perguntas fazem parte da atividade e têm como objetivo
-verificar se você compreendeu o conteúdo que pesquisou.
-
+Estas perguntas fazem parte da atividade e têm como objetivo verificar
+se você compreendeu o conteúdo que pesquisou.
 </p>
-
 
 <label class="label">
 
-Qual foi a informação ou ideia mais importante que você
-aprendeu durante sua pesquisa?
-
+Qual foi a informação ou ideia mais importante que você aprendeu
+durante sua pesquisa?
 <span class="required">*</span>
 
 </label>
-
 
 <textarea
 id="aprendizado"
@@ -1235,13 +796,11 @@ placeholder="Explique com suas próprias palavras aquilo que você considerou ma
 
 <label class="label">
 
-Explique por que o tema estudado é importante para
-compreender a História.
-
+Explique por que o tema estudado é importante para compreender
+a História ou a Geografia.
 <span class="required">*</span>
 
 </label>
-
 
 <textarea
 id="importancia"
@@ -1252,36 +811,28 @@ placeholder="Explique com suas próprias palavras."
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 8. FONTES -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     7 — FONTES
-===================================================== -->
-
-<section
-id="fontesCard"
-class="card hidden"
->
+<section id="fontesCard" class="card hidden">
 
 <h2>
-7. Fontes de Pesquisa
+8. Fontes de Pesquisa
 </h2>
-
 
 <label class="label">
 
 Quais fontes você utilizou para realizar sua pesquisa?
-
 <span class="required">*</span>
 
 </label>
-
 
 <textarea
 id="fontes"
 required
 placeholder="Informe os sites, livros, materiais didáticos, vídeos ou outras fontes utilizadas."
 ></textarea>
-
 
 <div class="help">
 
@@ -1293,20 +844,15 @@ durante sua pesquisa.
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 9. IA -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     8 — INTELIGÊNCIA ARTIFICIAL
-===================================================== -->
-
-<section
-id="iaCard"
-class="card hidden"
->
+<section id="iaCard" class="card hidden">
 
 <h2>
-8. Uso de Inteligência Artificial
+9. Uso de Inteligência Artificial
 </h2>
-
 
 <a
 href="https://prof-pedro-ia.pedro970oliver.workers.dev"
@@ -1314,11 +860,8 @@ target="_blank"
 rel="noopener noreferrer"
 class="ai-button"
 >
-
 🤖 Acessar o Prof. Pedro IA
-
 </a>
-
 
 <div class="locked">
 
@@ -1326,22 +869,16 @@ class="ai-button"
 Regra da atividade:
 </strong>
 
-
 <p>
-
-A utilização de ferramentas de Inteligência Artificial
-para produzir o texto final desta atividade
+A utilização de ferramentas de Inteligência Artificial para produzir
+o texto final desta atividade
 <strong>não é permitida.</strong>
-
 </p>
 
-
 <p>
-
 A única ferramenta de IA autorizada é o
 <strong>Prof. Pedro IA</strong>,
 exclusivamente para apoio à aprendizagem.
-
 </p>
 
 </div>
@@ -1351,7 +888,6 @@ exclusivamente para apoio à aprendizagem.
 
 Durante a realização da atividade,
 você utilizou o Prof. Pedro IA?
-
 <span class="required">*</span>
 
 </label>
@@ -1367,10 +903,8 @@ required
 >
 
 <span>
-
 Sim, utilizei o Prof. Pedro IA para estudar,
 tirar dúvidas ou compreender o conteúdo.
-
 </span>
 
 </div>
@@ -1385,9 +919,7 @@ value="nao"
 >
 
 <span>
-
 Não utilizei o Prof. Pedro IA.
-
 </span>
 
 </div>
@@ -1395,11 +927,10 @@ Não utilizei o Prof. Pedro IA.
 
 <label class="label">
 
-Se utilizou o Prof. Pedro IA, explique brevemente
-como ele foi utilizado.
+Se utilizou o Prof. Pedro IA,
+explique brevemente como ele foi utilizado.
 
 </label>
-
 
 <textarea
 id="comoIA"
@@ -1409,65 +940,43 @@ placeholder="Ex.: utilizei para entender um conceito, tirar uma dúvida ou pedir
 </section>
 
 
+<!-- ========================================================= -->
+<!-- 10. DECLARAÇÃO -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     9 — DECLARAÇÃO
-===================================================== -->
-
-<section
-id="declaracaoCard"
-class="card hidden"
->
+<section id="declaracaoCard" class="card hidden">
 
 <h2>
-9. Declaração Final de Autoria
+10. Declaração Final de Autoria
 </h2>
-
 
 <div class="warning">
 
 <p>
-
 <strong>
 Declaração do estudante
 </strong>
-
 </p>
 
-
 <p>
-
-Declaro que o texto apresentado nesta atividade foi
-produzido por mim, com base na minha compreensão
-do conteúdo pesquisado.
-
+Declaro que o texto apresentado nesta atividade foi produzido por mim,
+com base na minha compreensão do conteúdo pesquisado.
 </p>
 
-
 <p>
-
-Declaro que não utilizei ferramentas de Inteligência
-Artificial para produzir ou escrever o texto final
-desta atividade.
-
+Declaro que não utilizei ferramentas de Inteligência Artificial
+para produzir ou escrever o texto final desta atividade.
 </p>
 
-
 <p>
-
-Caso tenha utilizado o Prof. Pedro IA, ele foi utilizado
-somente como ferramenta de apoio à aprendizagem,
-conforme as orientações apresentadas neste formulário.
-
+Caso tenha utilizado o Prof. Pedro IA, ele foi utilizado somente
+como ferramenta de apoio à aprendizagem, conforme as orientações
+apresentadas neste formulário.
 </p>
 
-
 <p>
-
-Estou ciente de que o professor poderá solicitar
-esclarecimentos sobre o conteúdo apresentado para
-verificar minha compreensão da atividade.
-
+Estou ciente de que o professor poderá solicitar esclarecimentos
+sobre o conteúdo apresentado para verificar minha compreensão da atividade.
 </p>
 
 </div>
@@ -1484,10 +993,8 @@ required
 <span>
 
 <strong>
-
-Declaro que as informações acima são verdadeiras e que
-compreendi as orientações da atividade.
-
+Declaro que as informações acima são verdadeiras e que compreendi
+as orientações da atividade.
 </strong>
 
 </span>
@@ -1497,15 +1004,11 @@ compreendi as orientações da atividade.
 </section>
 
 
+<!-- ========================================================= -->
+<!-- ENVIO -->
+<!-- ========================================================= -->
 
-<!-- =====================================================
-     10 — ENVIO
-===================================================== -->
-
-<section
-id="enviarCard"
-class="card hidden"
->
+<section id="enviarCard" class="card hidden">
 
 <div class="notice">
 
@@ -1525,26 +1028,17 @@ Confira todas as respostas antes de clicar em
 
 </div>
 
-
 <br>
 
-
-<button
-type="submit"
->
-
+<button type="submit">
 Enviar Atividade
-
 </button>
-
 
 <div id="mensagem"></div>
 
 </section>
 
-
 </form>
-
 
 
 <footer>
@@ -1567,955 +1061,1557 @@ Escola Estadual Prof. Ruth Sá
 
 </footer>
 
-
 </div>
-
 
 
 <script>
 
-/* =====================================================
-   ATIVIDADES POR ANO
-===================================================== */
+/*
+===========================================================
+DADOS CURRICULARES
+Fonte: Guias de Aprendizagem 2026
+História e Geografia
+===========================================================
+*/
 
-const atividades = {
+const curriculo = {
 
-  1: {
+  historia: {
 
-    titulo:
-      "1º Ano — Os Povos Pré-Colombianos",
+    1: {
 
-    html: `
+      disciplina:"História",
 
-      <p>
+      serie:"1º ano",
 
-      <strong>Orientação:</strong>
+      bimestre:"3º bimestre",
 
-      Pesquise e estude sobre os principais povos
-      pré-colombianos, com destaque para Maias,
-      Astecas e Incas.
+      aulas:[
 
-      </p>
+        {
+          aula:"8",
+          conteudo:"Diversidade de povos indígenas; imaginário europeu.",
+          objetivo:"Compreender as representações europeias dos povos originários à época da conquista portuguesa; analisar e comparar a construção do imaginário europeu em torno da diversidade indígena, bem como suas permanências e rupturas ao longo do tempo.",
+          habilidade:"EM13CHS104",
+          ae:"AE6 - Analisar a diversidade sociocultural e a organização territorial dos povos originários da América, relacionando-as à expansão marítima europeia e aos imaginários da colonização."
+        },
 
-      <p>
-      Em seu texto argumentativo, explique:
-      </p>
+        {
+          aula:"9",
+          conteudo:"Povos originários: Astecas, Incas e Maias.",
+          objetivo:"Analisar as formas de ocupação do território americano antes da chegada dos espanhóis; comparar as formas de organização política e social das sociedades incas, astecas e maias.",
+          habilidade:"EM13CHS204",
+          ae:"AE6 - Analisar a diversidade sociocultural e a organização territorial dos povos originários da América, relacionando-as à expansão marítima europeia e aos imaginários da colonização."
+        },
 
-      <ul>
+        {
+          aula:"10",
+          conteudo:"Arquitetura e engenharia; tecelagem.",
+          objetivo:"Analisar os principais aspectos da arquitetura e engenharia inca; compreender os significados e funções da tecelagem para os povos originários dos Andes.",
+          habilidade:"EM13CHS204",
+          ae:"AE6 - Analisar a diversidade sociocultural e a organização territorial dos povos originários da América, relacionando-as à expansão marítima europeia e aos imaginários da colonização."
+        },
 
-      <li>
-      Localização dos povos;
-      </li>
+        {
+          aula:"11",
+          conteudo:"Práticas colonizadoras na América Espanhola; perspectivas sobre a conquista.",
+          objetivo:"Compreender o processo de conquista espanhola; analisar o impacto do sistema econômico na vida das colônias.",
+          habilidade:"EM13CHS102",
+          ae:"AE7 - Analisar as práticas colonizadoras espanhola e portuguesa na América, considerando as relações de poder, as estratégias de ocupação territorial e as dinâmicas entre europeus e indígenas."
+        },
 
-      <li>
-      Organização política e social;
-      </li>
+        {
+          aula:"12",
+          conteudo:"Práticas colonizadoras da América Portuguesa.",
+          objetivo:"Analisar características da colonização portuguesa na América; compreender estratégias administrativas na colônia; problematizar as estratégias por trás de alianças estabelecidas entre europeus e povos originários.",
+          habilidade:"EM13CHS102",
+          ae:"AE7 - Analisar as práticas colonizadoras espanhola e portuguesa na América, considerando as relações de poder, as estratégias de ocupação territorial e as dinâmicas entre europeus e indígenas."
+        }
 
-      <li>
-      Economia;
-      </li>
+      ]
 
-      <li>
-      Religião e cultura;
-      </li>
-
-      <li>
-      Principais conhecimentos e realizações;
-      </li>
-
-      <li>
-      Relação desses povos com a chegada dos europeus
-      à América.
-      </li>
-
-      </ul>
-
-      <p>
-
-      Ao final, desenvolva uma argumentação explicando
-
-      <strong>
-
-      a importância dos povos pré-colombianos
-      para a História da América.
-
-      </strong>
-
-      </p>
-
-      <div class="notice">
-
-      <strong>
-      Produção obrigatória:
-      </strong>
-
-      <br><br>
-
-      Seu trabalho deverá ser apresentado como um
-      texto argumentativo, utilizando suas próprias palavras.
-
-      </div>
-
-    `
-
-  },
+    },
 
 
-  2: {
+    2: {
 
-    titulo:
-      "2º Ano — Getúlio Vargas e a década de 1950",
+      disciplina:"História",
 
-    html: `
+      serie:"2º ano",
 
-      <p>
+      bimestre:"3º bimestre",
 
-      <strong>Orientação:</strong>
+      aulas:[
 
-      Estude o contexto político brasileiro relacionado
-      a Getúlio Vargas e à década de 1950, considerando
-      principalmente seu segundo governo,
-      entre 1951 e 1954.
+        {
+          aula:"8",
+          conteudo:"Estado Novo; Constituição de 1937; DIP; Ditadura.",
+          objetivo:"Caracterizar o Estado Novo; identificar características do governo ditatorial na Constituição de 1937; compreender o papel do DIP dentro da Ditadura de Vargas.",
+          habilidade:"EM13CHS602",
+          ae:"AE7 - Analisar o período democrático pós-1930, caracterizando populismo, autoritarismo e transformações socioeconômicas, avaliando o papel do Estado na industrialização e no trabalho."
+        },
 
-      </p>
+        {
+          aula:"9",
+          conteudo:"Consolidação das Leis do Trabalho (CLT); Governo Getúlio Vargas; Estado Novo.",
+          objetivo:"Analisar a trajetória dos direitos trabalhistas a partir do governo Vargas; compreender as características do trabalhismo no contexto histórico do Estado Novo; comparar e discutir permanências e mudanças na CLT ao longo do tempo.",
+          habilidade:"EM13CHS403",
+          ae:"AE7 - Analisar o período democrático pós-1930, caracterizando populismo, autoritarismo e transformações socioeconômicas, avaliando o papel do Estado na industrialização e no trabalho."
+        },
 
-      <p>
-      Em seu texto argumentativo, explique:
-      </p>
+        {
+          aula:"10",
+          conteudo:"Governo Dutra (1946-1951); liberalismo e políticas econômicas pró-EUA; Constituição de 1946; rompimento com a URSS e desdobramentos na luta dos trabalhadores.",
+          objetivo:"Analisar o alinhamento do Brasil com os EUA durante a Guerra Fria e seu impacto nas políticas econômicas e relações externas do governo Dutra; relacionar a Constituição de 1946 com medidas restritivas à organização trabalhista.",
+          habilidade:"EM13CHS403",
+          ae:"AE7 - Analisar o período democrático pós-1930, caracterizando populismo, autoritarismo e transformações socioeconômicas, avaliando o papel do Estado na industrialização e no trabalho."
+        },
 
-      <ul>
+        {
+          aula:"11",
+          conteudo:"Governo Vargas (1951-1954); nacionalismo econômico; reforço do trabalhismo.",
+          objetivo:"Analisar a relação entre o nacionalismo econômico de Vargas e o aprofundamento da legislação trabalhista, compreendendo como essas políticas visavam ampliar sua base de apoio popular.",
+          habilidade:"EM13CHS403",
+          ae:"AE7 - Analisar o período democrático pós-1930, caracterizando populismo, autoritarismo e transformações socioeconômicas, avaliando o papel do Estado na industrialização e no trabalho."
+        },
 
-      <li>
-      O contexto do retorno de Getúlio Vargas à Presidência;
-      </li>
+        {
+          aula:"12",
+          conteudo:"Governo JK (1956-1961); desenvolvimentismo/industrialização; Plano de Metas; inflação; greves; movimentos de trabalhadores rurais; SUDENE.",
+          objetivo:"Analisar o desenvolvimentismo e a industrialização durante o governo JK, relacionando políticas econômicas, conflitos sociais e desigualdades regionais.",
+          habilidade:"EM13CHS403",
+          ae:"AE7 - Analisar o período democrático pós-1930, caracterizando populismo, autoritarismo e transformações socioeconômicas, avaliando o papel do Estado na industrialização e no trabalho."
+        }
 
-      <li>
-      As principais características de seu segundo governo;
-      </li>
+      ]
 
-      <li>
-      O nacionalismo econômico;
-      </li>
+    },
 
-      <li>
-      A criação e importância da Petrobras;
-      </li>
 
-      <li>
-      As relações entre governo, trabalhadores e oposição;
-      </li>
+    3: {
 
-      <li>
-      A crise política de 1954;
-      </li>
+      disciplina:"História",
 
-      <li>
-      O suicídio de Getúlio Vargas e suas consequências políticas.
-      </li>
+      serie:"3º ano",
 
-      </ul>
+      bimestre:"2º bimestre",
 
-      <p>
+      aulas:[
 
-      Ao final, desenvolva uma argumentação explicando
+        {
+          aula:"1",
+          conteudo:"Guerra Fria; alianças econômicas e militares; corridas armamentista e espacial; zonas de influência dos blocos antagônicos e desdobramentos.",
+          objetivo:"Analisar os pressupostos da Guerra Fria dentro do contexto geopolítico mundial do pós-guerra e a bipolarização entre EUA e URSS; compreender políticas de reconstrução europeia e alianças militares; relacionar as corridas armamentista e espacial à ampliação das zonas de influência dos blocos.",
+          habilidade:"EM13CHS204",
+          ae:"AE5 - Analisar a ocupação do espaço e a formação de territórios durante a Guerra Fria, avaliando o papel das superpotências, das revoluções socialistas e dos movimentos de descolonização na configuração geopolítica mundial."
+        }
 
-      <strong>
+      ]
 
-      a importância do governo Vargas na política e
-      na economia brasileira da década de 1950.
-
-      </strong>
-
-      </p>
-
-      <div class="notice">
-
-      <strong>
-      Produção obrigatória:
-      </strong>
-
-      <br><br>
-
-      Não produza apenas uma lista de informações.
-      Construa um texto explicando e relacionando
-      os acontecimentos.
-
-      </div>
-
-    `
+    }
 
   },
 
 
-  3: {
+  geografia: {
 
-    titulo:
-      "3º Ano — A Corrida Espacial",
+    1: {
 
-    html: `
+      disciplina:"Geografia",
 
-      <p>
+      serie:"1º ano",
 
-      <strong>Orientação:</strong>
+      bimestre:"3º bimestre",
 
-      Estude a Corrida Espacial, desenvolvida principalmente
-      durante o contexto da Guerra Fria, envolvendo
-      Estados Unidos e União Soviética.
+      aulas:[
 
-      </p>
+        {
+          aula:"8",
+          conteudo:"Consequências do aquecimento global; Protocolo de Kyoto; Acordo de Paris; Conferência das Partes (COP).",
+          objetivo:"Identificar as principais consequências ambientais do aquecimento global; conhecer os principais acordos internacionais sobre o clima.",
+          habilidade:"EM13CHS306",
+          ae:"AE6 - Comparar os impactos socioambientais de diferentes modelos socioeconômicos em escala global, analisando as iniciativas e políticas governamentais voltadas à promoção da sustentabilidade."
+        },
 
-      <p>
-      Em seu texto argumentativo, explique:
-      </p>
+        {
+          aula:"9",
+          conteudo:"Práticas para o enfrentamento das mudanças climáticas.",
+          objetivo:"Identificar iniciativas globais e políticas governamentais voltadas para o enfrentamento das mudanças climáticas; identificar práticas individuais e coletivas que contribuem para mitigação e adaptação.",
+          habilidade:"EM13CHS305",
+          ae:"AE6 - Comparar os impactos socioambientais de diferentes modelos socioeconômicos em escala global, analisando as iniciativas e políticas governamentais voltadas à promoção da sustentabilidade."
+        },
 
-      <ul>
+        {
+          aula:"10",
+          conteudo:"Riscos e desastres; sistema de proteção e Defesa Civil.",
+          objetivo:"Reconhecer o papel e a importância da Defesa Civil na gestão de desastres; identificar ações preventivas e de resposta em situações de emergência.",
+          habilidade:"EM13CHS305",
+          ae:"AE6 - Comparar os impactos socioambientais de diferentes modelos socioeconômicos em escala global, analisando as iniciativas e políticas governamentais voltadas à promoção da sustentabilidade."
+        },
 
-      <li>
-      A relação entre Guerra Fria e Corrida Espacial;
-      </li>
+        {
+          aula:"11",
+          conteudo:"Aula prática: Defesa Civil somos todos nós.",
+          objetivo:"Analisar o papel da comunidade na prevenção de riscos e desastres; propor ações de prevenção na comunidade escolar.",
+          habilidade:"EM13CHS305",
+          ae:"AE6 - Comparar os impactos socioambientais de diferentes modelos socioeconômicos em escala global, analisando as iniciativas e políticas governamentais voltadas à promoção da sustentabilidade."
+        },
 
-      <li>
-      A participação da União Soviética;
-      </li>
+        {
+          aula:"12",
+          conteudo:"Defesa Civil somos todos nós: apresentação dos trabalhos.",
+          objetivo:"Analisar o papel da comunidade na prevenção de riscos e desastres; propor ações de prevenção na comunidade escolar.",
+          habilidade:"EM13CHS305",
+          ae:"AE6 - Comparar os impactos socioambientais de diferentes modelos socioeconômicos em escala global, analisando as iniciativas e políticas governamentais voltadas à promoção da sustentabilidade."
+        }
 
-      <li>
-      O lançamento do Sputnik;
-      </li>
+      ]
 
-      <li>
-      O primeiro ser humano no espaço;
-      </li>
+    },
 
-      <li>
-      A participação dos Estados Unidos;
-      </li>
 
-      <li>
-      A chegada do ser humano à Lua;
-      </li>
+    2: {
 
-      <li>
-      A importância tecnológica e política da Corrida Espacial.
-      </li>
+      disciplina:"Geografia",
 
-      </ul>
+      serie:"2º ano",
 
-      <p>
+      bimestre:"3º bimestre",
 
-      Ao final, desenvolva uma argumentação explicando
+      aulas:[
 
-      <strong>
+        {
+          aula:"8",
+          conteudo:"Circulação cultural; globalização e identidade local.",
+          objetivo:"Examinar a circulação de ideias, práticas e identidades no processo de globalização.",
+          habilidade:"EM13CHS201",
+          ae:"AE2 - Analisar transformações econômicas, fluxos migratórios e processos de globalização, especialmente no Brasil, compreendendo suas causas, efeitos e implicações para a economia, a sociedade e as relações internacionais."
+        },
 
-      por que a Corrida Espacial foi importante para
-      a disputa entre Estados Unidos e União Soviética
-      durante a Guerra Fria.
+        {
+          aula:"9",
+          conteudo:"Redes de informação; poder midiático; impacto das plataformas digitais.",
+          objetivo:"Avaliar os impactos da circulação digital de informações nas relações de poder globais.",
+          habilidade:"EM13CHS205",
+          ae:"AE7 - Analisar atores da globalização, avaliando fatores econômicos, demográficos, políticos e socioeconômicos do Brasil e do Mundo."
+        },
 
-      </strong>
+        {
+          aula:"10",
+          conteudo:"Soberania e globalização; interferência internacional; desafios do século XXI.",
+          objetivo:"Discutir como a soberania é impactada no atual contexto global.",
+          habilidade:"EM13CHS205",
+          ae:"AE7 - Analisar atores da globalização, avaliando fatores econômicos, demográficos, políticos e socioeconômicos do Brasil e do Mundo."
+        },
 
-      </p>
+        {
+          aula:"11",
+          conteudo:"Políticas de ajuste estrutural; dívida externa; desigualdades econômicas.",
+          objetivo:"Avaliar a influência do FMI e do Banco Mundial nas políticas econômicas de países em desenvolvimento.",
+          habilidade:"EM13CHS305",
+          ae:"AE9 - Avaliar a globalização econômica, as desigualdades e os fluxos globais (informação, tecnologias, capitais, mercadorias e cadeias produtivas), investigando seus impactos na economia e no meio ambiente."
+        },
 
-      <div class="notice">
+        {
+          aula:"12",
+          conteudo:"Tipos de sanções; impactos econômicos e políticos.",
+          objetivo:"Analisar os impactos das sanções econômicas internacionais.",
+          habilidade:"EM13CHS305",
+          ae:"AE9 - Avaliar a globalização econômica, as desigualdades e os fluxos globais (informação, tecnologias, capitais, mercadorias e cadeias produtivas), investigando seus impactos na economia e no meio ambiente."
+        }
 
-      <strong>
-      Produção obrigatória:
-      </strong>
+      ]
 
-      <br><br>
+    },
 
-      Apresente não apenas os acontecimentos,
-      mas também explique suas relações com a Guerra Fria.
 
-      </div>
+    3: {
 
-    `
+      disciplina:"Geografia",
+
+      serie:"3º ano",
+
+      bimestre:"3º bimestre — tema de produção",
+
+      aulas:[
+
+        {
+          aula:"Tema de produção",
+          conteudo:"Globalização, fluxos e transformações do espaço geográfico.",
+          objetivo:"Analisar como os processos de globalização e os fluxos de pessoas, informações, mercadorias e capitais transformam os territórios e produzem diferentes impactos sociais, econômicos e ambientais.",
+          habilidade:"Tema orientador — currículo de Geografia",
+          ae:"Produção autoral baseada no estudo do tema e nas fontes de pesquisa utilizadas pelo estudante."
+        }
+
+      ]
+
+    }
 
   }
 
 };
 
 
-/* =====================================================
-   ELEMENTOS
-===================================================== */
+/*
+===========================================================
+ATIVIDADES
+===========================================================
+*/
 
-const form =
-  document.getElementById("form");
+const atividades = {
 
-const sala =
-  document.getElementById("sala");
+  Historia: {
 
-const atividadeCard =
-  document.getElementById("atividadeCard");
+    1: {
 
-const atividade =
-  document.getElementById("atividade");
+      titulo:"1º Ano — Os Povos Pré-Colombianos",
 
-const orientacaoCard =
-  document.getElementById("orientacaoCard");
+      html:`
 
-const respostaCard =
-  document.getElementById("respostaCard");
+<p>
+<strong>Orientação:</strong>
+Pesquise e estude sobre os principais povos pré-colombianos,
+com destaque para Maias, Astecas e Incas.
+</p>
 
-const compreensaoCard =
-  document.getElementById("compreensaoCard");
+<p>
+Em seu texto argumentativo, explique:
+</p>
 
-const fontesCard =
-  document.getElementById("fontesCard");
+<ul>
 
-const iaCard =
-  document.getElementById("iaCard");
+<li>Localização dos povos;</li>
 
-const declaracaoCard =
-  document.getElementById("declaracaoCard");
+<li>Organização política e social;</li>
 
-const enviarCard =
-  document.getElementById("enviarCard");
+<li>Economia;</li>
 
-const resposta =
-  document.getElementById("resposta");
+<li>Religião e cultura;</li>
 
-const contador =
-  document.getElementById("contador");
+<li>Principais conhecimentos e realizações;</li>
 
-const mensagem =
-  document.getElementById("mensagem");
+<li>Relação desses povos com a chegada dos europeus à América.</li>
+
+</ul>
+
+<p>
+Ao final, desenvolva uma argumentação explicando
+<strong>
+a importância dos povos pré-colombianos para a História da América.
+</strong>
+</p>
+
+`
+
+    },
 
 
-/* =====================================================
-   IDENTIFICA O ANO
-===================================================== */
+    2: {
 
-function identificarAno(salaSelecionada){
+      titulo:"2º Ano — Getúlio Vargas e a década de 1950",
 
-  if(
-    salaSelecionada.startsWith("1")
-  ){
+      html:`
 
-    return "1";
+<p>
+<strong>Orientação:</strong>
+Estude o contexto político brasileiro relacionado a Getúlio Vargas
+e à década de 1950, considerando principalmente seu segundo governo,
+entre 1951 e 1954.
+</p>
+
+<p>
+Em seu texto argumentativo, explique o retorno de Vargas,
+o nacionalismo econômico, a Petrobras, as relações com trabalhadores
+e oposição, a crise de 1954 e o suicídio de Vargas.
+</p>
+
+<p>
+Ao final, desenvolva uma argumentação sobre
+<strong>
+a importância do governo Vargas na política e na economia brasileira
+da década de 1950.
+</strong>
+</p>
+
+`
+
+    },
+
+
+    3: {
+
+      titulo:"3º Ano — Ditaduras civil-militares e resistência na América Latina",
+
+      html:`
+
+<p>
+<strong>Orientação:</strong>
+Pesquise e estude um dos temas do 3º bimestre de História,
+com destaque para as ditaduras civil-militares no Brasil, Chile e Argentina
+e as formas de resistência.
+</p>
+
+<p>
+Em seu texto, explique o contexto do golpe de 1964,
+os mecanismos autoritários, a repressão, o discurso nacionalista
+e as formas de resistência política, social, cultural e artística.
+</p>
+
+<p>
+Ao final, desenvolva uma argumentação sobre
+<strong>
+as relações entre autoritarismo, resistência e defesa dos direitos humanos.
+</strong>
+</p>
+
+`
+
+    }
+
+  },
+
+
+  Geografia: {
+
+    1: {
+
+      titulo:"1º Ano — Mudanças climáticas, riscos e Defesa Civil",
+
+      html:`
+
+<p>
+<strong>Orientação:</strong>
+Pesquise e estude os conteúdos de Geografia do 3º bimestre
+relacionados às mudanças climáticas, riscos, desastres e Defesa Civil.
+</p>
+
+<p>
+Em seu texto, explique as consequências do aquecimento global,
+os acordos internacionais, as práticas de enfrentamento das mudanças
+climáticas e a importância da prevenção de riscos e desastres.
+</p>
+
+<p>
+Ao final, desenvolva uma argumentação sobre
+<strong>
+como sociedade, governos e comunidade escolar podem atuar
+na prevenção e redução de riscos socioambientais.
+</strong>
+</p>
+
+`
+
+    },
+
+
+    2: {
+
+      titulo:"2º Ano — Globalização e fluxos globais",
+
+      html:`
+
+<p>
+<strong>Orientação:</strong>
+Pesquise e estude os conteúdos de Geografia do 3º bimestre
+relacionados à globalização e aos fluxos globais.
+</p>
+
+<p>
+Em seu texto, explique os fluxos de informações, tecnologias
+e mercadorias, as cadeias produtivas globais, os impactos econômicos,
+sociais e ambientais, a soberania nacional e o papel de instituições
+financeiras internacionais.
+</p>
+
+<p>
+Ao final, desenvolva uma argumentação sobre
+<strong>
+como os fluxos globais transformam os territórios
+e afetam diferentes sociedades.
+</strong>
+</p>
+
+`
+
+    },
+
+
+    3: {
+
+      titulo:"3º Ano — Globalização, fluxos e transformações do espaço geográfico",
+
+      html:`
+
+<p>
+<strong>Orientação:</strong>
+Produza um texto argumentativo a partir de um tema de Geografia
+do 3º bimestre estudado em sala, relacionando globalização,
+fluxos e transformações do espaço geográfico.
+</p>
+
+<p>
+Você poderá abordar fluxos de pessoas, informações,
+mercadorias ou capitais e seus efeitos sobre os territórios.
+</p>
+
+<p>
+Ao final, desenvolva uma argumentação sobre
+<strong>
+como os fluxos contemporâneos produzem transformações
+econômicas, sociais e ambientais no espaço geográfico.
+</strong>
+</p>
+
+<div class="warning">
+
+<strong>Observação:</strong>
+
+o Guia de Aprendizagem de Geografia disponibilizado para este formulário
+apresenta Escopo-Sequência para 1ª e 2ª séries.
+
+Para o 3º ano, esta atividade utiliza um tema orientador de produção;
+se você me enviar o Guia específico do 3º ano, eu substituo este bloco
+pelas aulas, habilidades e AEs oficiais.
+
+</div>
+
+`
+
+    }
 
   }
 
-  if(
-    salaSelecionada.startsWith("2")
-  ){
+};
 
-    return "2";
 
-  }
+/*
+===========================================================
+ELEMENTOS
+===========================================================
+*/
 
-  if(
-    salaSelecionada.startsWith("3")
-  ){
+const form=document.getElementById("form");
 
-    return "3";
+const sala=document.getElementById("sala");
 
-  }
+const disciplina=document.getElementById("disciplina");
+
+const disciplinaHelp=document.getElementById("disciplinaHelp");
+
+const atividadeCard=document.getElementById("atividadeCard");
+
+const atividade=document.getElementById("atividade");
+
+const guiaCard=document.getElementById("guiaCard");
+
+const guiaResumo=document.getElementById("guiaResumo");
+
+const orientacaoCard=document.getElementById("orientacaoCard");
+
+const respostaCard=document.getElementById("respostaCard");
+
+const compreensaoCard=document.getElementById("compreensaoCard");
+
+const fontesCard=document.getElementById("fontesCard");
+
+const iaCard=document.getElementById("iaCard");
+
+const declaracaoCard=document.getElementById("declaracaoCard");
+
+const enviarCard=document.getElementById("enviarCard");
+
+const resposta=document.getElementById("resposta");
+
+const contador=document.getElementById("contador");
+
+const mensagem=document.getElementById("mensagem");
+
+
+/*
+===========================================================
+IDENTIFICAR ANO
+===========================================================
+*/
+
+function identificarAno(s){
+
+  if(s.startsWith("1")) return "1";
+
+  if(s.startsWith("2")) return "2";
+
+  if(s.startsWith("3")) return "3";
 
   return null;
 
 }
 
 
-/* =====================================================
-   ESCONDE TODAS AS SEÇÕES
-===================================================== */
+/*
+===========================================================
+ATUALIZAR DISCIPLINAS
+===========================================================
+*/
 
-function esconderSecoes(){
+function atualizarDisciplinas(ano){
 
-  atividadeCard.classList.add("hidden");
+  disciplina.disabled=!ano;
 
-  orientacaoCard.classList.add("hidden");
+  disciplina.value="";
 
-  respostaCard.classList.add("hidden");
+  if(!ano){
 
-  compreensaoCard.classList.add("hidden");
+    disciplinaHelp.textContent=
+      "Selecione primeiro a série / sala. Depois escolha História ou Geografia.";
 
-  fontesCard.classList.add("hidden");
+    return;
 
-  iaCard.classList.add("hidden");
+  }
 
-  declaracaoCard.classList.add("hidden");
-
-  enviarCard.classList.add("hidden");
+  disciplinaHelp.textContent=
+    ano==="3"
+      ?
+      "Para o 3º ano, História usa o Guia de História. Geografia está disponível como tema orientador até que seja enviado o Guia específico do 3º ano."
+      :
+      "Escolha a disciplina para carregar automaticamente a atividade e o conteúdo curricular.";
 
 }
 
 
-/* =====================================================
-   MOSTRA A ATIVIDADE
-===================================================== */
+/*
+===========================================================
+ESCONDER SEÇÕES
+===========================================================
+*/
 
-sala.addEventListener(
-  "change",
-  function(){
+function esconderSecoes(){
 
-    const salaSelecionada =
-      this.value;
+  [
+    atividadeCard,
+    guiaCard,
+    orientacaoCard,
+    respostaCard,
+    compreensaoCard,
+    fontesCard,
+    iaCard,
+    declaracaoCard,
+    enviarCard
+  ]
+  .forEach(el=>el.classList.add("hidden"));
 
-    if(!salaSelecionada){
+}
 
-      esconderSecoes();
 
-      return;
+/*
+===========================================================
+ESCAPAR HTML
+===========================================================
+*/
 
-    }
+function escapeHtml(text){
 
-    const ano =
-      identificarAno(salaSelecionada);
+  return String(text).replace(
+    /[&<>"']/g,
 
-    if(
-      !ano ||
-      !atividades[ano]
-    ){
+    m=>({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[m])
 
-      esconderSecoes();
+  );
 
-      return;
+}
 
-    }
 
-    atividade.innerHTML = `
+/*
+===========================================================
+RENDER CURRICULO
+===========================================================
+*/
 
-      <h3>
-      ${atividades[ano].titulo}
-      </h3>
+function renderCurriculoBox(item){
 
-      ${atividades[ano].html}
+  return `
 
-    `;
+<div class="curriculo-box">
 
-    atividadeCard.classList.remove("hidden");
+<h4>
+${escapeHtml(item.disciplina)}
+—
+${escapeHtml(item.serie)}
+—
+${escapeHtml(item.bimestre)}
+</h4>
 
-    orientacaoCard.classList.remove("hidden");
+${item.aulas.map(a=>`
 
-    respostaCard.classList.remove("hidden");
+<div class="curriculo-item">
 
-    compreensaoCard.classList.remove("hidden");
+<div class="meta">
+<strong>Aula:</strong>
+${escapeHtml(a.aula)}
+</div>
 
-    fontesCard.classList.remove("hidden");
+<div class="meta">
+<strong>Conteúdo:</strong>
+${escapeHtml(a.conteudo)}
+</div>
 
-    iaCard.classList.remove("hidden");
+<div class="meta">
+<strong>Objetivo:</strong>
+${escapeHtml(a.objetivo)}
+</div>
 
-    declaracaoCard.classList.remove("hidden");
+<div class="meta">
+<strong>Habilidade/código:</strong>
+${escapeHtml(a.habilidade)}
+</div>
 
-    enviarCard.classList.remove("hidden");
+<div class="meta">
+<strong>AE:</strong>
+${escapeHtml(a.ae)}
+</div>
+
+</div>
+
+`).join("")}
+
+</div>
+
+`;
+
+}
+
+
+/*
+===========================================================
+OBTER DADOS CURRICULARES
+===========================================================
+*/
+
+function obterDadosCurriculares(ano,materia){
+
+  const dados=[];
+
+  if(
+    materia &&
+    curriculo[materia.toLowerCase()] &&
+    curriculo[materia.toLowerCase()][ano]
+  ){
+
+    dados.push(
+      curriculo[materia.toLowerCase()][ano]
+    );
 
   }
 
-);
+  return dados;
+
+}
 
 
-/* =====================================================
-   CONTADOR
-===================================================== */
+/*
+===========================================================
+MONTAR RESUMO
+===========================================================
+*/
 
-resposta.addEventListener(
-  "input",
-  function(){
+function montarResumoCurricular(ano,materia){
 
-    const quantidade =
-      this.value.length;
+  const dados=
+    obterDadosCurriculares(ano,materia);
 
-    contador.textContent =
-      quantidade.toLocaleString("pt-BR") +
-      " / 10.000 caracteres";
+  guiaResumo.innerHTML=`
 
-    if(
-      quantidade < 1000
-    ){
+<div class="notice">
 
-      contador.style.color =
-        "#a51d2d";
+<strong>
+Informações carregadas automaticamente para a série selecionada.
+</strong>
 
-    }
+<br>
 
-    else{
+O registro curricular abaixo também será enviado ao sistema
+junto com a atividade.
 
-      contador.style.color =
-        "#0c613b";
+</div>
 
-    }
+<div class="curriculo-grid">
 
-    if(
-      quantidade >= 10000
-    ){
+${dados.map(renderCurriculoBox).join("")}
 
-      contador.textContent =
-        "10.000 / 10.000 caracteres — limite atingido";
+</div>
 
-    }
+`;
+
+  return dados;
+
+}
+
+
+/*
+===========================================================
+MUDANÇA DE SALA
+===========================================================
+*/
+
+sala.addEventListener("change",function(){
+
+  const salaSelecionada=this.value;
+
+  esconderSecoes();
+
+  atualizarDisciplinas(
+    identificarAno(salaSelecionada)
+  );
+
+});
+
+
+/*
+===========================================================
+MUDANÇA DE DISCIPLINA
+===========================================================
+*/
+
+disciplina.addEventListener("change",function(){
+
+  esconderSecoes();
+
+  const salaSelecionada=sala.value;
+
+  const ano=identificarAno(salaSelecionada);
+
+  const materia=this.value;
+
+  if(
+    !ano ||
+    !materia ||
+    !atividades[materia] ||
+    !atividades[materia][ano]
+  ){
+
+    return;
 
   }
 
-);
+  atividade.innerHTML=`
 
+<h3>
+${atividades[materia][ano].titulo}
+</h3>
 
-/* =====================================================
-   ENVIO
-===================================================== */
+${atividades[materia][ano].html}
 
-form.addEventListener(
-  "submit",
-  function(e){
+`;
 
-    e.preventDefault();
+  atividadeCard.classList.remove("hidden");
 
-    mensagem.innerHTML = "";
+  montarResumoCurricular(
+    ano,
+    materia
+  );
 
+  guiaCard.classList.remove("hidden");
 
-    /* -------------------------------------------------
-       VALIDA FORMULÁRIO
-    ------------------------------------------------- */
+  orientacaoCard.classList.remove("hidden");
 
-    if(!form.checkValidity()){
+  respostaCard.classList.remove("hidden");
 
-      form.reportValidity();
+  compreensaoCard.classList.remove("hidden");
 
-      return;
+  fontesCard.classList.remove("hidden");
 
-    }
+  iaCard.classList.remove("hidden");
 
+  declaracaoCard.classList.remove("hidden");
 
-    /* -------------------------------------------------
-       VALIDA USO DA IA
-    ------------------------------------------------- */
+  enviarCard.classList.remove("hidden");
 
-    const usoIASelecionado =
-      document.querySelector(
-        'input[name="usoIA"]:checked'
-      );
+});
 
 
-    if(
-      usoIASelecionado &&
-      usoIASelecionado.value === "sim" &&
-      document
-        .getElementById("comoIA")
-        .value
-        .trim() === ""
-    ){
+/*
+===========================================================
+CONTADOR
+===========================================================
+*/
 
-      mensagem.innerHTML = `
+resposta.addEventListener("input",function(){
 
-        <div class="error">
+  const quantidade=this.value.length;
 
-        <strong>
-        Explique como você utilizou o Prof. Pedro IA.
-        </strong>
+  contador.textContent=
+    quantidade.toLocaleString("pt-BR")
+    +
+    " / 10.000 caracteres";
 
-        <br><br>
+  contador.style.color=
+    quantidade<1000
+      ?
+      "#a51d2d"
+      :
+      "#0c613b";
 
-        Informe se utilizou a ferramenta para tirar dúvidas,
-        compreender um conceito, revisar uma explicação,
-        aprofundar o conteúdo ou outra finalidade relacionada
-        à aprendizagem.
+  if(quantidade>=10000){
 
-        </div>
+    contador.textContent=
+      "10.000 / 10.000 caracteres — limite atingido";
 
-      `;
+  }
 
-      document
-        .getElementById("comoIA")
-        .focus();
+});
 
-      return;
 
-    }
+/*
+===========================================================
+ENVIO DO FORMULÁRIO
+===========================================================
+*/
 
+form.addEventListener("submit",function(e){
 
-    /* -------------------------------------------------
-       MÍNIMO DE 1.000 CARACTERES
-    ------------------------------------------------- */
+  e.preventDefault();
 
-    if(
-      resposta.value.trim().length < 1000
-    ){
+  mensagem.innerHTML="";
 
-      mensagem.innerHTML = `
 
-        <div class="error">
+  /*
+  -----------------------------------------------------------
+  VALIDAÇÃO
+  -----------------------------------------------------------
+  */
 
-        <strong>
-        Seu texto ainda está muito curto.
-        </strong>
+  if(!form.checkValidity()){
 
-        <br><br>
+    form.reportValidity();
 
-        O texto precisa possuir pelo menos
-        <strong>1.000 caracteres</strong>.
+    return;
 
-        <br><br>
+  }
 
-        Desenvolva melhor sua explicação,
-        apresentando introdução, desenvolvimento
-        e conclusão.
 
-        </div>
-
-      `;
-
-      resposta.focus();
-
-      return;
-
-    }
-
-
-    /* -------------------------------------------------
-       MÁXIMO
-    ------------------------------------------------- */
-
-    if(
-      resposta.value.length > 10000
-    ){
-
-      mensagem.innerHTML = `
-
-        <div class="error">
-
-        <strong>
-        O limite máximo de 10.000 caracteres foi ultrapassado.
-        </strong>
-
-        <br><br>
-
-        Reduza o tamanho do texto antes de enviar.
-
-        </div>
-
-      `;
-
-      resposta.focus();
-
-      return;
-
-    }
-
-
-    /* -------------------------------------------------
-       TEMA
-    ------------------------------------------------- */
-
-    const ano =
-      identificarAno(sala.value);
-
-    const tema =
-      atividades[ano].titulo;
-
-
-    /* -------------------------------------------------
-       DATA E HORA
-    ------------------------------------------------- */
-
-    const agora =
-      new Date();
-
-    const dataHora =
-      agora.toLocaleString(
-        "pt-BR"
-      );
-
-
-    /* -------------------------------------------------
-       TERMOS
-    ------------------------------------------------- */
-
-    const termoCiencia =
-      document
-        .getElementById("cienciaInicial")
-        .checked
-        ? "ACEITO DIGITALMENTE"
-        : "NÃO ACEITO";
-
-
-    const declaracaoFinal =
-      document
-        .getElementById("declaracao")
-        .checked
-        ? "DECLARADO E ACEITO DIGITALMENTE"
-        : "NÃO DECLARADO";
-
-
-    /* -------------------------------------------------
-       DADOS
-    ------------------------------------------------- */
-
-    const dados = {
-
-      dataHora:
-
-        dataHora,
-
-      nome:
-
-        document
-          .getElementById("nome")
-          .value
-          .trim(),
-
-      sala:
-
-        sala.value,
-
-      tema:
-
-        tema,
-
-      texto:
-
-        document
-          .getElementById("resposta")
-          .value
-          .trim(),
-
-      aprendizado:
-
-        document
-          .getElementById("aprendizado")
-          .value
-          .trim(),
-
-      importancia:
-
-        document
-          .getElementById("importancia")
-          .value
-          .trim(),
-
-      fontes:
-
-        document
-          .getElementById("fontes")
-          .value
-          .trim(),
-
-      usoIA:
-
-        usoIASelecionado.value,
-
-      comoIA:
-
-        document
-          .getElementById("comoIA")
-          .value
-          .trim(),
-
-      termoCiencia:
-
-        termoCiencia,
-
-      declaracaoFinal:
-
-        declaracaoFinal,
-
-      dataAceite:
-
-        dataHora,
-
-      escola:
-
-        "Escola Estadual Prof. Ruth Sá",
-
-      tituloFormulario:
-
-        "Compensação de Ausência e Nota"
-
-    };
-
-
-    /* -------------------------------------------------
-       URL DO APPS SCRIPT
-    ------------------------------------------------- */
-
-    const SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbwZppsVvEa3LAWYvBrH3TXHAaAeV1o8uwMCWqqLToxF1-3G3mcYbYli4cWAS5XSVHJv/exec";
-
-
-    /* -------------------------------------------------
-       PREPARA OS DADOS
-    ------------------------------------------------- */
-
-    const dadosFormulario =
-      new URLSearchParams();
-
-
-    Object.keys(dados).forEach(
-      function(chave){
-
-        dadosFormulario.append(
-          chave,
-          dados[chave]
-        );
-
-      }
+  /*
+  -----------------------------------------------------------
+  USO DA IA
+  -----------------------------------------------------------
+  */
+
+  const usoIASelecionado=
+    document.querySelector(
+      'input[name="usoIA"]:checked'
     );
 
 
-    /* -------------------------------------------------
-       BOTÃO
-    ------------------------------------------------- */
+  if(
+    usoIASelecionado &&
+    usoIASelecionado.value==="sim" &&
+    document.getElementById("comoIA").value.trim()===""
+  ){
 
-    const botaoEnviar =
-      form.querySelector(
-        'button[type="submit"]'
-      );
+    mensagem.innerHTML=`
 
+<div class="error">
 
-    botaoEnviar.disabled = true;
+<strong>
+Explique como você utilizou o Prof. Pedro IA.
+</strong>
 
-    botaoEnviar.textContent =
-      "Enviando atividade...";
+<br><br>
 
+Informe se utilizou a ferramenta para tirar dúvidas,
+compreender um conceito, revisar uma explicação,
+aprofundar o conteúdo ou outra finalidade relacionada à aprendizagem.
 
-    mensagem.innerHTML = `
+</div>
 
-      <div class="notice">
+`;
 
-      ⏳ Registrando sua atividade e gerando o documento...
+    document.getElementById("comoIA").focus();
 
-      <br><br>
-
-      Aguarde alguns segundos.
-
-      </div>
-
-    `;
-
-
-    /* -------------------------------------------------
-       ENVIO
-    ------------------------------------------------- */
-
-    fetch(
-      SCRIPT_URL,
-      {
-
-        method:"POST",
-
-        body:dadosFormulario,
-
-        mode:"no-cors"
-
-      }
-
-    )
-
-    .then(
-      function(){
-
-        mensagem.innerHTML = `
-
-          <div class="success">
-
-          <strong>
-          ✅ Atividade enviada com sucesso!
-          </strong>
-
-          <br><br>
-
-          Estudante:
-          <strong>
-          ${dados.nome}
-          </strong>
-
-          <br>
-
-          Sala:
-          <strong>
-          ${dados.sala}
-          </strong>
-
-          <br>
-
-          Tema:
-          <strong>
-          ${dados.tema}
-          </strong>
-
-          <br><br>
-
-          Sua atividade foi registrada.
-
-          <br><br>
-
-          O Termo de Ciência e a Declaração Final
-          foram registrados juntamente com a atividade.
-
-          <br><br>
-
-          📄 Um PDF da atividade foi gerado automaticamente
-          no sistema do professor.
-
-          <br><br>
-
-          Você já pode fechar esta página.
-
-          </div>
-
-        `;
-
-        botaoEnviar.textContent =
-          "Atividade Enviada ✓";
-
-      }
-
-    )
-
-    .catch(
-      function(erro){
-
-        console.error(
-          "Erro ao enviar:",
-          erro
-        );
-
-        mensagem.innerHTML = `
-
-          <div class="error">
-
-          <strong>
-          ❌ Não foi possível enviar a atividade.
-          </strong>
-
-          <br><br>
-
-          Verifique sua conexão com a internet
-          e tente novamente.
-
-          </div>
-
-        `;
-
-        botaoEnviar.disabled = false;
-
-        botaoEnviar.textContent =
-          "Enviar Atividade";
-
-      }
-
-    );
-
-
-    /* -------------------------------------------------
-       ROLA PARA A MENSAGEM
-    ------------------------------------------------- */
-
-    window.scrollTo({
-
-      top:
-        document.body.scrollHeight,
-
-      behavior:
-        "smooth"
-
-    });
+    return;
 
   }
 
-);
+
+  /*
+  -----------------------------------------------------------
+  TAMANHO DO TEXTO
+  -----------------------------------------------------------
+  */
+
+  if(resposta.value.trim().length<1000){
+
+    mensagem.innerHTML=`
+
+<div class="error">
+
+<strong>
+Seu texto ainda está muito curto.
+</strong>
+
+<br><br>
+
+O texto precisa possuir pelo menos
+<strong>1.000 caracteres</strong>.
+
+<br><br>
+
+Desenvolva melhor sua explicação,
+apresentando introdução, desenvolvimento e conclusão.
+
+</div>
+
+`;
+
+    resposta.focus();
+
+    return;
+
+  }
+
+
+  if(resposta.value.length>10000){
+
+    mensagem.innerHTML=`
+
+<div class="error">
+
+<strong>
+O limite máximo de 10.000 caracteres foi ultrapassado.
+</strong>
+
+<br><br>
+
+Reduza o tamanho do texto antes de enviar.
+
+</div>
+
+`;
+
+    resposta.focus();
+
+    return;
+
+  }
+
+
+  /*
+  -----------------------------------------------------------
+  DADOS PRINCIPAIS
+  -----------------------------------------------------------
+  */
+
+  const ano=
+    identificarAno(sala.value);
+
+  const materia=
+    disciplina.value;
+
+  const tema=
+    atividades[materia][ano].titulo;
+
+  const agora=
+    new Date();
+
+  const dataHora=
+    agora.toLocaleString("pt-BR");
+
+
+  /*
+  -----------------------------------------------------------
+  DADOS CURRICULARES
+  -----------------------------------------------------------
+  */
+
+  const dadosCurriculares=
+    obterDadosCurriculares(
+      ano,
+      materia
+    );
+
+
+  /*
+  ===========================================================
+  IMPORTANTE
+  ===========================================================
+  
+  Como não existe uma seleção de aula para o aluno,
+  o sistema utiliza automaticamente a primeira referência
+  curricular cadastrada para aquela série/disciplina.
+
+  Assim os campos abaixo chegam individualmente ao Apps Script:
+
+  Disciplina
+  Tema
+  Aula
+  Conteúdo
+  Objetivo
+  Habilidade
+  AE
+
+  ===========================================================
+  */
+
+  const aulaPrincipal=
+    dadosCurriculares &&
+    dadosCurriculares.length>0 &&
+    dadosCurriculares[0].aulas &&
+    dadosCurriculares[0].aulas.length>0
+      ?
+      dadosCurriculares[0].aulas[0]
+      :
+      null;
+
+
+  /*
+  -----------------------------------------------------------
+  OBJETO DE ENVIO
+  -----------------------------------------------------------
+  */
+
+  const dados={
+
+    dataHora:
+
+      dataHora,
+
+
+    nome:
+
+      document
+      .getElementById("nome")
+      .value
+      .trim(),
+
+
+    sala:
+
+      sala.value,
+
+
+    disciplina:
+
+      materia,
+
+
+    tema:
+
+      tema,
+
+
+    /*
+    =========================================================
+    NOVOS CAMPOS INDIVIDUAIS
+    =========================================================
+    */
+
+    aula:
+
+      aulaPrincipal
+        ?
+        aulaPrincipal.aula
+        :
+        "",
+
+
+    conteudo:
+
+      aulaPrincipal
+        ?
+        aulaPrincipal.conteudo
+        :
+        "",
+
+
+    objetivo:
+
+      aulaPrincipal
+        ?
+        aulaPrincipal.objetivo
+        :
+        "",
+
+
+    habilidade:
+
+      aulaPrincipal
+        ?
+        aulaPrincipal.habilidade
+        :
+        "",
+
+
+    ae:
+
+      aulaPrincipal
+        ?
+        aulaPrincipal.ae
+        :
+        "",
+
+
+    /*
+    =========================================================
+    TEXTO DO ALUNO
+    =========================================================
+    */
+
+    texto:
+
+      resposta.value.trim(),
+
+
+    aprendizado:
+
+      document
+      .getElementById("aprendizado")
+      .value
+      .trim(),
+
+
+    importancia:
+
+      document
+      .getElementById("importancia")
+      .value
+      .trim(),
+
+
+    fontes:
+
+      document
+      .getElementById("fontes")
+      .value
+      .trim(),
+
+
+    usoIA:
+
+      usoIASelecionado.value,
+
+
+    comoIA:
+
+      document
+      .getElementById("comoIA")
+      .value
+      .trim(),
+
+
+    /*
+    =========================================================
+    TERMOS
+    =========================================================
+    */
+
+    termoCiencia:
+
+      document
+      .getElementById("cienciaInicial")
+      .checked
+        ?
+        "ACEITO DIGITALMENTE"
+        :
+        "NÃO ACEITO",
+
+
+    declaracaoFinal:
+
+      document
+      .getElementById("declaracao")
+      .checked
+        ?
+        "DECLARADO E ACEITO DIGITALMENTE"
+        :
+        "NÃO DECLARADO",
+
+
+    dataAceite:
+
+      dataHora,
+
+
+    escola:
+
+      "Escola Estadual Prof. Ruth Sá",
+
+
+    tituloFormulario:
+
+      "Compensação de Ausência e Nota",
+
+
+    /*
+    =========================================================
+    INFORMAÇÕES CURRICULARES COMPLETAS
+    =========================================================
+    */
+
+    disciplinasCurriculares:
+
+      dadosCurriculares
+      .map(x=>x.disciplina)
+      .join(" + "),
+
+
+    bimestreGuia:
+
+      [
+        ...new Set(
+          dadosCurriculares.map(
+            x=>x.bimestre
+          )
+        )
+      ].join(" | "),
+
+
+    guiaCurricularJson:
+
+      JSON.stringify(
+        dadosCurriculares
+      ),
+
+
+    guiaCurricularTexto:
+
+      dadosCurriculares
+      .map(x=>{
+
+        return (
+
+          `${x.disciplina} — ${x.serie} — ${x.bimestre}\n`
+
+          +
+
+          x.aulas
+          .map(a=>`
+
+Aula ${a.aula}
+
+Conteúdo:
+${a.conteudo}
+
+Objetivo:
+${a.objetivo}
+
+Habilidade/código:
+${a.habilidade}
+
+AE:
+${a.ae}
+
+`)
+          .join("\n\n")
+
+        );
+
+      })
+      .join(
+        "\n\n==============================\n\n"
+      )
+
+  };
+
+
+  /*
+  -----------------------------------------------------------
+  URL DO GOOGLE APPS SCRIPT
+  -----------------------------------------------------------
+  */
+
+  const SCRIPT_URL=
+    "https://script.google.com/macros/s/AKfycbwZppsVvEa3LAWYvBrH3TXHAaAeV1o8uwMCWqqLToxF1-3G3mcYbYli4cWAS5XSVHJv/exec";
+
+
+  /*
+  -----------------------------------------------------------
+  PREPARAR ENVIO
+  -----------------------------------------------------------
+  */
+
+  const dadosFormulario=
+    new URLSearchParams();
+
+
+  Object.keys(dados).forEach(
+    chave=>{
+
+      dadosFormulario.append(
+        chave,
+        dados[chave]
+      );
+
+    }
+  );
+
+
+  /*
+  -----------------------------------------------------------
+  BOTÃO
+  -----------------------------------------------------------
+  */
+
+  const botaoEnviar=
+    form.querySelector(
+      'button[type="submit"]'
+    );
+
+
+  botaoEnviar.disabled=true;
+
+  botaoEnviar.textContent=
+    "Enviando atividade...";
+
+
+  mensagem.innerHTML=`
+
+<div class="notice">
+
+⏳ Registrando sua atividade e gerando o documento...
+
+<br><br>
+
+Aguarde alguns segundos.
+
+</div>
+
+`;
+
+
+  /*
+  -----------------------------------------------------------
+  ENVIO PARA GOOGLE APPS SCRIPT
+  -----------------------------------------------------------
+  */
+
+  fetch(
+    SCRIPT_URL,
+    {
+      method:"POST",
+      body:dadosFormulario,
+      mode:"no-cors"
+    }
+  )
+
+  .then(function(){
+
+    mensagem.innerHTML=`
+
+<div class="success">
+
+<strong>
+✅ Atividade enviada com sucesso!
+</strong>
+
+<br><br>
+
+Estudante:
+<strong>
+${escapeHtml(dados.nome)}
+</strong>
+
+<br>
+
+Sala:
+<strong>
+${escapeHtml(dados.sala)}
+</strong>
+
+<br>
+
+Disciplina:
+<strong>
+${escapeHtml(dados.disciplina)}
+</strong>
+
+<br>
+
+Tema:
+<strong>
+${escapeHtml(dados.tema)}
+</strong>
+
+<br><br>
+
+Sua atividade foi registrada.
+
+<br><br>
+
+O Termo de Ciência,
+a Declaração Final e as informações curriculares
+do Guia foram registrados juntamente com a atividade.
+
+<br><br>
+
+📄 Um PDF da atividade foi gerado automaticamente
+no sistema do professor.
+
+<br><br>
+
+Você já pode fechar esta página.
+
+</div>
+
+`;
+
+
+    botaoEnviar.textContent=
+      "Atividade Enviada ✓";
+
+
+  })
+
+  .catch(function(erro){
+
+    console.error(
+      "Erro ao enviar:",
+      erro
+    );
+
+
+    mensagem.innerHTML=`
+
+<div class="error">
+
+<strong>
+❌ Não foi possível enviar a atividade.
+</strong>
+
+<br><br>
+
+Verifique sua conexão com a internet
+e tente novamente.
+
+</div>
+
+`;
+
+
+    botaoEnviar.disabled=false;
+
+    botaoEnviar.textContent=
+      "Enviar Atividade";
+
+  });
+
+
+  /*
+  -----------------------------------------------------------
+  ROLAR PARA O RESULTADO
+  -----------------------------------------------------------
+  */
+
+  window.scrollTo({
+    top:document.body.scrollHeight,
+    behavior:"smooth"
+  });
+
+});
 
 </script>
 
 </body>
-
 </html>
