@@ -340,6 +340,56 @@ footer{
   line-height:1.6
 }
 
+.draft-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:15px
+}
+
+.draft-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:15px
+}
+
+.draft-button{
+  background:#2457d6
+}
+
+.draft-button:hover{
+  background:#173d9b
+}
+
+.draft-secondary{
+  background:#5f6b7a
+}
+
+.draft-secondary:hover{
+  background:#46505c
+}
+
+.draft-code{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-align:center;
+  padding:12px;
+  margin-top:12px;
+  border:2px dashed #2457d6;
+  border-radius:10px;
+  background:#f4f7ff;
+  color:#173d9b
+}
+
+@media(max-width:600px){
+  .draft-grid,
+  .draft-actions{
+    grid-template-columns:1fr
+  }
+}
+
 .help{
   font-size:13px;
   color:var(--muted);
@@ -569,6 +619,60 @@ Selecione sua série / sala
 
 </select>
 
+
+<label class="label">
+
+E-mail para salvar o rascunho
+<span class="required">*</span>
+
+</label>
+
+<input
+ id="email"
+ type="email"
+ required
+ placeholder="Digite seu e-mail"
+ autocomplete="email"
+ >
+
+<div class="help">
+O e-mail será usado para localizar seu rascunho e, se solicitado, receber o código de acesso.
+</div>
+
+<div class="draft-grid">
+
+<div>
+<label class="label">
+Código do rascunho
+</label>
+
+<input
+ id="codigoRascunho"
+ type="text"
+ maxlength="9"
+ placeholder="Ex.: RUTH-A7K92"
+ autocomplete="off"
+ >
+
+<div class="help">
+Se você já possui um código, informe-o para continuar seu rascunho.
+</div>
+</div>
+
+<div>
+<label class="label">
+Ações do rascunho
+</label>
+
+<div class="draft-actions">
+<button type="button" id="salvarRascunhoBtn" class="draft-button">💾 Salvar Rascunho</button>
+<button type="button" id="carregarRascunhoBtn" class="draft-secondary">🔄 Continuar Rascunho</button>
+</div>
+</div>
+
+</div>
+
+<div id="rascunhoMensagem"></div>
 
 <label class="label">
 
@@ -1626,6 +1730,13 @@ const contador=document.getElementById("contador");
 
 const mensagem=document.getElementById("mensagem");
 
+const email=document.getElementById("email");
+const codigoRascunho=document.getElementById("codigoRascunho");
+const salvarRascunhoBtn=document.getElementById("salvarRascunhoBtn");
+const carregarRascunhoBtn=document.getElementById("carregarRascunhoBtn");
+const rascunhoMensagem=document.getElementById("rascunhoMensagem");
+
+
 
 /*
 ===========================================================
@@ -1971,6 +2082,229 @@ ENVIO DO FORMULÁRIO
 ===========================================================
 */
 
+/*
+===========================================================
+SISTEMA DE RASCUNHO
+===========================================================
+*/
+
+const SCRIPT_URL=
+  "https://script.google.com/macros/s/AKfycbwZppsVvEa3LAWYvBrH3TXHAaAeV1o8uwMCWqqLToxF1-3G3mcYbYli4cWAS5XSVHJv/exec";
+
+function gerarCodigoRascunho(){
+  const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let codigo="RUTH-";
+  for(let i=0;i<5;i++){
+    codigo += chars[Math.floor(Math.random()*chars.length)];
+  }
+  return codigo;
+}
+
+function obterUsoIA(){
+  const el=document.querySelector('input[name="usoIA"]:checked');
+  return el ? el.value : "";
+}
+
+function obterDadosCurriculoAtual(){
+  const ano=identificarAno(sala.value);
+  const materia=disciplina.value;
+  return obterDadosCurriculares(ano,materia);
+}
+
+function montarDadosFormulario({rascunho=false}={}){
+  const ano=identificarAno(sala.value);
+  const materia=disciplina.value;
+  const dadosCurriculares=(ano && materia) ? obterDadosCurriculares(ano,materia) : [];
+  const atividadeAtual=(ano && materia && atividades[materia] && atividades[materia][ano])
+    ? atividades[materia][ano]
+    : null;
+  const aulaPrincipal=
+    dadosCurriculares.length>0 && dadosCurriculares[0].aulas && dadosCurriculares[0].aulas.length>0
+      ? dadosCurriculares[0].aulas[0]
+      : null;
+
+  return {
+    nome:document.getElementById("nome").value.trim(),
+    email:email.value.trim(),
+    sala:sala.value,
+    disciplina:materia,
+    tema:atividadeAtual ? atividadeAtual.titulo : "",
+    codigoRascunho:codigoRascunho.value.trim().toUpperCase(),
+    aula:aulaPrincipal ? aulaPrincipal.aula : "",
+    conteudo:aulaPrincipal ? aulaPrincipal.conteudo : "",
+    objetivo:aulaPrincipal ? aulaPrincipal.objetivo : "",
+    habilidade:aulaPrincipal ? aulaPrincipal.habilidade : "",
+    ae:aulaPrincipal ? aulaPrincipal.ae : "",
+    texto:resposta.value.trim(),
+    aprendizado:document.getElementById("aprendizado").value.trim(),
+    importancia:document.getElementById("importancia").value.trim(),
+    fontes:document.getElementById("fontes").value.trim(),
+    usoIA:obterUsoIA(),
+    comoIA:document.getElementById("comoIA").value.trim(),
+    termoCiencia:document.getElementById("cienciaInicial").checked ? "ACEITO DIGITALMENTE" : "NÃO ACEITO",
+    declaracaoFinal:document.getElementById("declaracao").checked ? "DECLARADO E ACEITO DIGITALMENTE" : "NÃO DECLARADO",
+    dataAceite:document.getElementById("cienciaInicial").checked ? new Date().toLocaleString("pt-BR") : "",
+    escola:"Escola Estadual Prof. Ruth Sá",
+    tituloFormulario:"Compensação de Ausência e Nota",
+    disciplinasCurriculares:dadosCurriculares.map(x=>x.disciplina).join(" + "),
+    bimestreGuia:[...new Set(dadosCurriculares.map(x=>x.bimestre))].join(" | "),
+    guiaCurricularJson:JSON.stringify(dadosCurriculares),
+    guiaCurricularTexto:dadosCurriculares.map(x=>{
+      return `${x.disciplina} — ${x.serie} — ${x.bimestre}\n`+
+        x.aulas.map(a=>`\nAula ${a.aula}\nConteúdo:\n${a.conteudo}\n\nObjetivo:\n${a.objetivo}\n\nHabilidade/código:\n${a.habilidade}\n\nAE:\n${a.ae}\n`).join("\n\n");
+    }).join("\n\n==============================\n\n"),
+    modo:rascunho ? "rascunho" : "final"
+  };
+}
+
+function mostrarMensagemRascunho(tipo,html){
+  rascunhoMensagem.innerHTML=`<div class="${tipo}">${html}</div>`;
+}
+
+function enviarRascunho(dados){
+  const params=new URLSearchParams();
+  Object.keys(dados).forEach(chave=>params.append(chave,dados[chave] ?? ""));
+  params.append("acao","salvarRascunho");
+
+  return fetch(SCRIPT_URL,{
+    method:"POST",
+    body:params,
+    mode:"no-cors"
+  });
+}
+
+function aplicarRascunho(dados){
+  if(!dados) throw new Error("Rascunho vazio.");
+
+  document.getElementById("nome").value=dados.nome || "";
+  email.value=dados.email || "";
+  codigoRascunho.value=dados.codigoRascunho || "";
+
+  if(dados.sala){
+    sala.value=dados.sala;
+    sala.dispatchEvent(new Event("change"));
+  }
+
+  if(dados.disciplina){
+    disciplina.value=dados.disciplina;
+    disciplina.dispatchEvent(new Event("change"));
+  }
+
+  resposta.value=dados.texto || "";
+  document.getElementById("aprendizado").value=dados.aprendizado || "";
+  document.getElementById("importancia").value=dados.importancia || "";
+  document.getElementById("fontes").value=dados.fontes || "";
+  document.getElementById("comoIA").value=dados.comoIA || "";
+  document.getElementById("cienciaInicial").checked=(dados.termoCiencia === "ACEITO DIGITALMENTE");
+  document.getElementById("declaracao").checked=(dados.declaracaoFinal === "DECLARADO E ACEITO DIGITALMENTE");
+
+  document.querySelectorAll('input[name="usoIA"]').forEach(r=>{
+    r.checked=(r.value === (dados.usoIA || ""));
+  });
+
+  resposta.dispatchEvent(new Event("input"));
+  mostrarMensagemRascunho("success",`<strong>✅ Rascunho carregado!</strong><br><br>Você pode continuar exatamente de onde parou.`);
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function carregarRascunhoJSONP(){
+  const codigo=codigoRascunho.value.trim().toUpperCase();
+  const mail=email.value.trim().toLowerCase();
+
+  if(!mail || !email.checkValidity()){
+    mostrarMensagemRascunho("error","Informe um e-mail válido antes de continuar o rascunho.");
+    email.focus();
+    return;
+  }
+
+  if(!/^RUTH-[A-Z0-9]{5}$/.test(codigo)){
+    mostrarMensagemRascunho("error","Informe um código válido no formato <strong>RUTH-XXXXX</strong>.");
+    codigoRascunho.focus();
+    return;
+  }
+
+  mostrarMensagemRascunho("notice","⏳ Procurando seu rascunho...");
+  carregarRascunhoBtn.disabled=true;
+
+  const callback="rascunhoCallback_"+Date.now()+"_"+Math.floor(Math.random()*10000);
+  const script=document.createElement("script");
+  let finalizado=false;
+
+  window[callback]=function(respostaServidor){
+    finalizado=true;
+    try{
+      if(!respostaServidor || !respostaServidor.sucesso){
+        throw new Error(respostaServidor && respostaServidor.erro ? respostaServidor.erro : "Rascunho não encontrado.");
+      }
+      aplicarRascunho(respostaServidor.dados);
+    }catch(erro){
+      mostrarMensagemRascunho("error",`<strong>❌ Não foi possível carregar o rascunho.</strong><br><br>${escapeHtml(erro.message)}`);
+    }finally{
+      carregarRascunhoBtn.disabled=false;
+      delete window[callback];
+      script.remove();
+    }
+  };
+
+  script.onerror=function(){
+    if(finalizado) return;
+    mostrarMensagemRascunho("error","<strong>❌ Não foi possível consultar o rascunho.</strong><br><br>Verifique o e-mail e o código e tente novamente.");
+    carregarRascunhoBtn.disabled=false;
+    delete window[callback];
+    script.remove();
+  };
+
+  script.src=SCRIPT_URL+"?acao=carregarRascunho&codigoRascunho="+encodeURIComponent(codigo)+"&email="+encodeURIComponent(mail)+"&callback="+encodeURIComponent(callback)+"&_="+Date.now();
+  document.body.appendChild(script);
+}
+
+salvarRascunhoBtn.addEventListener("click",function(){
+  const mail=email.value.trim();
+  const nome=document.getElementById("nome").value.trim();
+
+  if(!mail || !email.checkValidity()){
+    mostrarMensagemRascunho("error","<strong>Informe um e-mail válido.</strong><br><br>Ele será usado para localizar seu rascunho.");
+    email.focus();
+    return;
+  }
+
+  if(!nome){
+    mostrarMensagemRascunho("error","<strong>Informe seu nome completo antes de salvar o rascunho.</strong>");
+    document.getElementById("nome").focus();
+    return;
+  }
+
+  if(!codigoRascunho.value.trim()){
+    codigoRascunho.value=gerarCodigoRascunho();
+  }else{
+    codigoRascunho.value=codigoRascunho.value.trim().toUpperCase();
+  }
+
+  const dados=montarDadosFormulario({rascunho:true});
+  salvarRascunhoBtn.disabled=true;
+  mostrarMensagemRascunho("notice","⏳ Salvando seu rascunho... aguarde alguns segundos.");
+
+  enviarRascunho(dados)
+    .then(function(){
+      mostrarMensagemRascunho("success",`
+        <strong>💾 Rascunho salvo com sucesso!</strong><br><br>
+        Seu código de rascunho é:<div class="draft-code">${escapeHtml(dados.codigoRascunho)}</div>
+        <br>
+        <strong>Guarde este código.</strong> Ele será usado junto com seu e-mail para continuar a atividade depois.
+        <br><br>
+        Se o envio de e-mail estiver habilitado no sistema, uma cópia do código também será enviada para <strong>${escapeHtml(dados.email)}</strong>.
+      `);
+    })
+    .catch(function(){
+      mostrarMensagemRascunho("error","<strong>❌ Não foi possível salvar o rascunho.</strong><br><br>Verifique sua conexão e tente novamente.");
+    })
+    .finally(function(){
+      salvarRascunhoBtn.disabled=false;
+    });
+});
+
+carregarRascunhoBtn.addEventListener("click",carregarRascunhoJSONP);
+
 form.addEventListener("submit",function(e){
 
   e.preventDefault();
@@ -2186,6 +2520,14 @@ Reduza o tamanho do texto antes de enviar.
       .value
       .trim(),
 
+
+    email:
+
+      email.value.trim(),
+
+    codigoRascunho:
+
+      codigoRascunho.value.trim().toUpperCase(),
 
     sala:
 
@@ -2422,10 +2764,6 @@ ${a.ae}
   -----------------------------------------------------------
   */
 
-  const SCRIPT_URL=
-    "https://script.google.com/macros/s/AKfycbwZppsVvEa3LAWYvBrH3TXHAaAeV1o8uwMCWqqLToxF1-3G3mcYbYli4cWAS5XSVHJv/exec";
-
-
   /*
   -----------------------------------------------------------
   PREPARAR ENVIO
@@ -2446,6 +2784,8 @@ ${a.ae}
 
     }
   );
+
+  dadosFormulario.append("acao","enviarAtividade");
 
 
   /*
